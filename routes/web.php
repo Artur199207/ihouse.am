@@ -1,21 +1,18 @@
 <?php
-
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\EmailController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\ListingController;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 Route::get('tutorial/{category_slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
-
-
-
+Route::get('/listings', [ListingController::class, 'index'])->name('listings.index');
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 

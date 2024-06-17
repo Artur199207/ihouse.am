@@ -19,6 +19,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="shortcut icon" href="{{asset('assets/image/new_logo.png')}}" type="image/x-icon">
 
     <!-- Styles -->
     
@@ -104,6 +105,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+        @include('layouts.inc.frontend-footer')
     </div>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
     <script>
