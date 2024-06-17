@@ -8,48 +8,37 @@
             <h1 class="">Ավելացնել կատեգորիան</h1>
         </div>
         <div class="card-body">
-            @if($errors->any())
+
+            @if ($errors->any())
                 <div class="alert alert-danger">
-                    @foreach($errors->all() as $error)
+                    @foreach ($errors->all() as $error)
                         <div>{{ $error }}</div>
                     @endforeach
-                </div>
-            @endif
-
-            @if(session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
-                </div>
-            @endif
-
-            @if(session('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
                 </div>
             @endif
 
             <form action="{{ url('admin/add-category') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="name">կատեգորիայի անվանումը</label>
-                    <input type="text" name="name" class="form-control">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" >
                 </div>
                 <div class="mb-3">
-                    <label for="Slug">Slug</label>
-                    <input type="text" name="Slug" class="form-control">
+                    <label for="slug">Slug</label>
+                    <input type="text" name="slug" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="description">Description</label>
+                    <textarea name="description" class="form-control" ></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="image">Image</label>
-                    <input type="file" name="image" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="Description">Description</label>
-                    <textarea name="Description" rows="5" class="form-control"></textarea>
+                    <input type="file" name="image" class="form-control" >
                 </div>
                 <h6>SEO Tags</h6>
                 <div class="mb-3">
                     <label for="meta_title">Meta Title</label>
-                    <input type="text" name="meta_title" class="form-control">
+                    <input type="text" name="meta_title" class="form-control" >
                 </div>
                 <div class="mb-3">
                     <label for="meta_description">Meta Description</label>
@@ -63,11 +52,11 @@
                 <div class="row">
                     <div class="col-md-3 mb-3">
                         <label for="navbar_status">Navbar Status</label>
-                        <input type="checkbox" name="navbar_status">
+                        <input type="checkbox" name="navbar_status" >
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="status">Status</label>
-                        <input type="checkbox" name="status">
+                        <input type="checkbox" name="status" >
                     </div>
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-primary">Save Category</button>

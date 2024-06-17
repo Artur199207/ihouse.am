@@ -16,6 +16,8 @@ class AddAsToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->integer('role_as')->default('0'); 
         });
+    
+       
         
     }
 
@@ -29,5 +31,7 @@ class AddAsToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('role_as');
         });
+       
+        
     }
 }
