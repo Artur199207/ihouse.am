@@ -24,15 +24,15 @@
                 @method('PUT')
 
                 <div class="mb-3">
-                    <label for="name">Name</label>
+                    <label for="name">Անուն</label>
                     <input type="text" name="name" value="{{ $category->name }}" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label for="slug">Slug</label>
+                    <label for="slug">Հասցէ՝</label>
                     <input type="text" name="slug" value="{{ $category->slug }}" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label for="description">Description</label>
+                    <label for="description">Տեղեկատվություն</label>
                     <textarea name="description" class="form-control">{{ $category->description }}</textarea>
                 </div>
                 <div class="mb-3">
@@ -47,30 +47,30 @@
 
                 <h6>SEO Tags</h6>
                 <div class="mb-3">
-                    <label for="meta_title">Meta Title</label>
+                    <label for="meta_title">Կոդ ՝</label>
                     <input type="text" name="meta_title" class="form-control" value="{{ $category->meta_title }}">
                 </div>
                 <div class="mb-3">
-                    <label for="meta_description">Meta Description</label>
+                    <label for="meta_description">Շինության տիպը`</label>
                     <textarea rows="3" name="meta_description" class="form-control">{{ $category->meta_description }}</textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="meta_keywords">Meta Keywords</label>
+                    <label for="meta_keywords">Տեսակը`</label>
                     <textarea rows="3" name="meta_keywords" class="form-control">{{ $category->meta_keywords }}</textarea>
                 </div>
 
                 <h6>Status Mode</h6>
                 <div class="row">
-                    <div class="col-md-3 mb-3">
+                    <!-- <div class="col-md-3 mb-3">
                         <label for="navbar_status">Navbar Status</label>
                         <input type="checkbox" name="navbar_status" {{ $category->navbar_status == 1 ? 'checked' : '' }}>
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="status">Status</label>
                         <input type="checkbox" name="status" {{ $category->status == 1 ? 'checked' : '' }}>
-                    </div>
+                    </div> -->
                     <div class="col-md-6">
-                        <button type="submit" class="btn btn-primary">Save Category</button>
+                        <button type="submit" class="btn btn-primary">Պահպանել կատեգորիան</button>
                     </div>
                 </div>
             </form>
