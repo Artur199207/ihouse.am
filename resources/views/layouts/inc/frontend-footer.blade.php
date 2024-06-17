@@ -29,10 +29,10 @@
             
             <div class="col-lg-3 col-sm-3">
                     <h4>Follow us</h4>
-                    <a href="#"><img src="images/facebook.png" alt="facebook"></a>
-                    <a href="#"><img src="images/twitter.png" alt="twitter"></a>
-                    <a href="#"><img src="images/linkedin.png" alt="linkedin"></a>
-                    <a href="#"><img src="images/instagram.png" alt="instagram"></a>
+                    <a href="#"><img src="{{asset('assets/images/facebook.png')}}" alt="facebook"></a>
+                    <a href="#"><img src="{{asset('assets/images/twitter.png')}}" alt="twitter"></a>
+                    <a href="#"><img src="{{asset('assets/images/linkedin.png')}}" alt="linkedin"></a>
+                    <a href="#"><img src="{{asset('assets/images/instagram.png')}}" alt="instagram"></a>
             </div>
 
              <div class="col-lg-3 col-sm-3">
