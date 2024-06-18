@@ -12,8 +12,10 @@
 
     <!-- Scripts -->
 
-
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -39,7 +41,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/jquery.ba-cond.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.slitslider.js') }}"></script>
 
-
+    
 </head>
 
 <body>
@@ -104,6 +106,32 @@
         </main>
     </div>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
+    <script>
+    
+        function openMenu() {
+            var button = document.querySelector('.navbar-toggle');
+            var menu = document.querySelector('.navbar-collapse');
+
+            if (!menu.classList.contains('in')) {
+                button.click();
+            }
+        }
+
+        function closeMenu() {
+            var button = document.querySelector('.navbar-toggle');
+            var menu = document.querySelector('.navbar-collapse');
+
+            if (menu.classList.contains('in')) {
+                button.click();
+            }
+        }
+
+        openMenu();  
+        setTimeout(closeMenu, 2000);  
+
+
+
+    </script>
 </body>
 
 </html>

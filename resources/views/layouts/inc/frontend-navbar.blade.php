@@ -27,10 +27,11 @@
     </div>
 </div>
 
+
 <div class="container">
     <div class="header">
         <a href="index.php">
-            <img src="{{asset('assets/image/new_logo.png')}}" alt="ihouse.am" style="width:100px;heigth:100px;">
+            <img src="{{asset('assets/image/new_logo.png')}}" alt="ihouse.am" style="width:100px;height:100px;">
         </a>
         <ul class="pull-right">
             <li><a href="buysalerent.php">Buy</a></li>
