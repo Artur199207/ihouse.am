@@ -7,7 +7,6 @@ use App\Http\Controllers\EmailController;
 //     return view('welcome');
 // });
 use App\Http\Controllers\FrontendController;
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

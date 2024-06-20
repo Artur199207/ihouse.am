@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="inside-banner">
+  <div class="container"> 
+    <span class="pull-right"><a href="{{ url('/') }}">Home</a> / Buy</span>
+    <h2>Buy</h2>
+</div>
+</div>
 <div class="container">
 <div class="properties-listing spacer">
 
@@ -77,6 +82,14 @@
           <img src="{{ asset('assets/images/2.jpg') }}" class="properties" alt="properties" />
          
         </div>
+        <div class="item">
+          <img src="{{ asset('assets/images/2.jpg') }}" class="properties" alt="properties" />
+         
+        </div>
+        <div class="item">
+          <img src="{{ asset('assets/images/2.jpg') }}" class="properties" alt="properties" />
+         
+        </div>
         <!-- #Item 2 -->
 
         <!-- Item 3 -->
@@ -95,7 +108,7 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
-<!-- #Slider Ends -->
+
 
   </div>
   
@@ -130,17 +143,7 @@
 
 </div>
 <div class="col-lg-12 col-sm-6 ">
-<!-- <div class="enquiry">
-  <h6><span class="glyphicon glyphicon-envelope"></span> Post Enquiry</h6>
-  <form role="form">
-                <input type="text" class="form-control" placeholder="Full Name"/>
-                <input type="text" class="form-control" placeholder="you@yourdomain.com"/>
-                <input type="text" class="form-control" placeholder="your number"/>
-                <textarea rows="6" class="form-control" placeholder="Whats on your mind?"></textarea>
-      <button type="submit" class="btn btn-primary" name="Submit">Send Message</button>
-      </form>
- </div>         
-</div> -->
+
   </div>
 </div>
 </div>
