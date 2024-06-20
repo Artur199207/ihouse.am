@@ -6,12 +6,14 @@ use App\Http\Controllers\EmailController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+use App\Http\Controllers\FrontendController;
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'index']);
+Route::get('tutorial/{category_slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
 
 
 
@@ -26,8 +28,11 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::put('update-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);
     Route::get('delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
 
-    
+   
 });
+
+
+
 
 Route::get('/email', [App\Http\Controllers\EmailController::class, 'create']);
     Route::post('/email', [App\Http\Controllers\EmailController::class, 'sendEmail'])->name('send.email');

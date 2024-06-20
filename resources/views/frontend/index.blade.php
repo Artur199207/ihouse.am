@@ -148,7 +148,15 @@
         <h4><a href="property-detail.php">Royal Inn</a></h4>
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="property-detail.php">View Details</a>
+        @php
+    $categories = App\Models\Category::get();
+@endphp
+
+@foreach ($categories as $cateitem)
+    <a class="btn btn-primary" href="{{ url('tutorial/' . $cateitem->slug) }}">View Details</a>
+@endforeach
+
+
       </div>
       <div class="properties">
         <div class="image-holder"><img src="{{asset('assets/images/properties/2.jpg')}}" class="img-responsive" alt="properties"/>
@@ -160,11 +168,11 @@
         <a class="btn btn-primary" href="property-detail.php">View Details</a>
       </div>
       <div class="properties">
-        <div class="image-holder"><img src="{{asset('assets/images/properties/3.jpg')}}" class="img-responsive" alt="properties"/></div>
+        <div class="image-holder"><img src="" class="img-responsive" alt="properties"/></div>
         <h4><a href="property-detail.php">Royal Inn</a></h4>
         <p class="price">Price: $234,900</p>
         <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="property-detail.php">View Details</a>
+        <a class="btn btn-primary" href="{{ url('/') }}">View Details</a>
       </div>
       <div class="properties">
         <div class="image-holder"><img src="{{asset('assets/images/properties/4.jpg')}}" class="img-responsive" alt="properties"/></div>
