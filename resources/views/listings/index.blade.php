@@ -9,7 +9,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
-    justify-content: flex-end;
+    justify-content: center;
+}
+@media screen and (max-width:992px) {
+  .item{
+    max-width:300px;
+    width: 100%;
+  }
 }
 </style>
 <div class="inside-banner">
@@ -64,14 +70,12 @@
 
 
 </div>
-<div class="col-lg-9 col-sm-4 ">
-  <div class="d-flex col-lg-12">.
+
+<div class="col-lg-9 col-sm-8 ">
+  <div class="d-flex col-lg-12 ">
   @php
     $categories = App\Models\Category::get();
   @endphp
-
-  
-  
     @foreach ($categories as $category)
         <div class="item">
             <div class="properties">
