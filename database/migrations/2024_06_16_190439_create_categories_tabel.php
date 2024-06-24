@@ -49,6 +49,7 @@ class CreateCategoriesTabel extends Migration
             $table->string('slug1')->nullable();
             $table->mediumText('description')->nullable();
             $table->string('image')->nullable();
+            $table->string('image1')->nullable();
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();

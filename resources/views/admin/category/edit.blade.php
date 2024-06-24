@@ -113,8 +113,6 @@
         @endif
     </div>
 
-    <h6>SEO Tags</h6>
-
     <div class="mb-3">
         <label for="meta_title">Տարածաշրջան</label>
         <input type="text" name="meta_title" class="form-control" value="{{ old('meta_title', $category->meta_title ?? '') }}">
@@ -132,7 +130,6 @@
 
     <!-- <button type="submit" class="btn btn-primary">{{ isset($category) ? 'Update' : 'Submit' }}</button> -->
 
-                <h6>SEO Tags</h6>
                 <div class="mb-3">
                     <label for="meta_title">Կոդ ՝</label>
                     <input type="text" name="meta_title" class="form-control" value="{{ $category->meta_title }}">
@@ -145,8 +142,8 @@
                     <label for="meta_keywords">Տեսակը`</label>
                     <textarea rows="3" name="meta_keywords" class="form-control">{{ $category->meta_keywords }}</textarea>
                 </div>
-
-                <h6>Status Mode</h6>
+             
+   
                 <div class="row">
                     <!-- <div class="col-md-3 mb-3">
                         <label for="navbar_status">Navbar Status</label>
@@ -164,4 +161,5 @@
         </div>
     </div>
 </div>
+
 @endsection

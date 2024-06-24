@@ -170,14 +170,20 @@ class CategoryController extends Controller
         $category->slug = $data['slug'] ?? null;
         $category->slug1 = $data['slug1'] ?? null;
         $category->description = $data['description'];
-
+        
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('uploads/category/'), $filename);
             $category->image = $filename;
         }
-
+        if ($request->hasFile('image1')) {
+            foreach ($request->file('image1') as $file) {
+                $filename = time() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('uploads/category/'), $filename);
+              
+            }
+        }
         $category->meta_title = $data['meta_title'] ?? null;
         $category->meta_description = $data['meta_description'] ?? null;
         $category->meta_keywords = $data['meta_keywords'] ?? null;
@@ -216,7 +222,7 @@ class CategoryController extends Controller
         $category->slug = $data['slug'] ?? null;
         $category->slug1 = $data['slug1'] ?? null;
         $category->description = $data['description'];
-
+   
         if ($request->hasFile('image')) {
             $destination = 'uploads/category/' . $category->image;
             if (File::exists($destination)) {
@@ -227,6 +233,13 @@ class CategoryController extends Controller
             $filename = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('uploads/category/'), $filename);
             $category->image = $filename;
+        }
+        
+        if ($request->hasFile('image1')) {
+            foreach ($request->file('image1') as $file) {
+                $filename = time() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('uploads/category/'), $filename);
+            }
         }
 
         $category->meta_title = $data['meta_title'] ?? null;
@@ -258,4 +271,5 @@ class CategoryController extends Controller
         }
     }
 }
+
 

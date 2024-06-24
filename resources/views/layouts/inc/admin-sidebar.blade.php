@@ -15,8 +15,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="{{url('admin/add-category')}}">Ավելացնել կատեգորիան</a>
-                                    <a class="nav-link" href="{{url('admin/category')}}">Դիտել կատեգորիան</a>
+                                    <a class="nav-link" href="{{url('admin/add-category')}}">Ավելացնել բնակարաններ</a>
+                                    <a class="nav-link" href="{{url('admin/category')}}">Դիտել բնակարանները</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

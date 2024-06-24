@@ -141,6 +141,7 @@ class CategoryFormRequest extends FormRequest
             'meta_keywords' => ['nullable', 'string'],
             'navbar_status' => ['nullable'],
             'status' => ['nullable'],
+            'image1.*' => 'image|mimes:jpeg,png,jpg,gif|max:35000',
         ];
 
         return $rules;

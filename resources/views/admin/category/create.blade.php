@@ -87,7 +87,6 @@
                     <label for="image">Image</label>
                     <input type="file" name="image" class="form-control" >
                 </div>
-                <h6>SEO Tags</h6>
                 <div class="mb-3">
                     <label for="meta_title">Տարածաշրջան</label>
                     <input type="text" name="meta_title" class="form-control" >
@@ -100,7 +99,15 @@
                     <label for="meta_keywords">Գործակալ</label>
                     <textarea rows="3" name="meta_keywords" class="form-control"></textarea>
                 </div>
-                <h6>Status Mode</h6>
+                <div class="mb-3">
+        <label for="image1">Նոր նկարներ (մուլտիմեդիա)</label>
+        <input type="file" name="image1[]" class="form-control" id="image1" aria-describedby="emailHelp" multiple>
+        @error('image1')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+    </div>
+    <div id="image-preview" class="mt-3"></div>
+            
                 <div class="row">
                     <!-- <div class="col-md-3 mb-3">
                         <label for="navbar_status">Navbar Status</label>
@@ -118,4 +125,27 @@
         </div>
     </div>
 </div>
+<script>
+    document.getElementById('image1').addEventListener('change', function(event) {
+        var previewContainer = document.getElementById('image-preview');
+        previewContainer.innerHTML = ''; // Clear previous previews
+
+        var files = event.target.files;
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                var imgElement = document.createElement('img');
+                imgElement.className = 'img-thumbnail mr-2 mb-2'; 
+                imgElement.style.maxWidth = '150px'; 
+                imgElement.style.maxHeight = '150px'; 
+                imgElement.src = e.target.result;
+                previewContainer.appendChild(imgElement);
+            }
+
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
 @endsection
