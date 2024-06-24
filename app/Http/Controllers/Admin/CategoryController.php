@@ -14,7 +14,7 @@
 //     {
 //         $category = Category::all();
 //         return view('admin.category.index', compact('category'));
-        
+
 //     }
 
 //     public function create()
@@ -24,7 +24,7 @@
 
 //     public function store(CategoryFormRequest $request)
 //     {
-        
+
 //         $data = $request->validated();
 
 //         $category = new Category;
@@ -120,8 +120,8 @@
 //     }
 // }
 
-    
-    
+
+
 // }
 
 
@@ -152,7 +152,11 @@ class CategoryController extends Controller
     public function store(CategoryFormRequest $request)
     {
         $data = $request->validated();
-
+        $request->validate([
+            'name' => 'required|string',
+            'image1.*' => 'image|mimes:jpeg,png,jpg,gif|max:350000', // Validate each image file
+            // Add more validation rules as needed
+        ]);
         $category = new Category;
         $category->name = $data['name'] ?? null;
         $category->name1 = $data['name1'] ?? null;
@@ -170,7 +174,7 @@ class CategoryController extends Controller
         $category->slug = $data['slug'] ?? null;
         $category->slug1 = $data['slug1'] ?? null;
         $category->description = $data['description'];
-        
+
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . '.' . $file->getClientOriginalExtension();
@@ -178,11 +182,13 @@ class CategoryController extends Controller
             $category->image = $filename;
         }
         if ($request->hasFile('image1')) {
+            $imagePaths = [];
             foreach ($request->file('image1') as $file) {
                 $filename = time() . '_' . $file->getClientOriginalName();
                 $file->move(public_path('uploads/category/'), $filename);
-              
+                $imagePaths[] = 'uploads/category/' . $filename; // Store path or filename in array
             }
+            $category->image1 = json_encode($imagePaths); // Store as JSON-encoded string in database
         }
         $category->meta_title = $data['meta_title'] ?? null;
         $category->meta_description = $data['meta_description'] ?? null;
@@ -222,7 +228,7 @@ class CategoryController extends Controller
         $category->slug = $data['slug'] ?? null;
         $category->slug1 = $data['slug1'] ?? null;
         $category->description = $data['description'];
-   
+
         if ($request->hasFile('image')) {
             $destination = 'uploads/category/' . $category->image;
             if (File::exists($destination)) {
@@ -234,7 +240,7 @@ class CategoryController extends Controller
             $file->move(public_path('uploads/category/'), $filename);
             $category->image = $filename;
         }
-        
+
         if ($request->hasFile('image1')) {
             foreach ($request->file('image1') as $file) {
                 $filename = time() . '_' . $file->getClientOriginalName();

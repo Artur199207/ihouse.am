@@ -50,6 +50,7 @@ class Category extends Model
         'slug1',
         'description',
         'image',
+        'image1',
         'meta_title',
         'meta_description',
         'meta_keyword',
