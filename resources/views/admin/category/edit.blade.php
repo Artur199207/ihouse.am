@@ -24,26 +24,113 @@
                 @method('PUT')
 
                 <div class="mb-3">
-                    <label for="name">Անուն</label>
-                    <input type="text" name="name" value="{{ $category->name }}" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="slug">Հասցէ՝</label>
-                    <input type="text" name="slug" value="{{ $category->slug }}" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="description">Տեղեկատվություն</label>
-                    <textarea name="description" class="form-control">{{ $category->description }}</textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="image">Image</label>
-                    <input type="file" name="image" class="form-control">
-                    @if ($category->image)
-                        <img src="{{ asset('uploads/category/' . $category->image) }}" width="100" height="100" alt="Category Image">
-                    @else
-                        <p>No image uploaded</p>
-                    @endif
-                </div>
+        <label for="name">Շինության տիպ</label>
+        <input type="text" name="name" class="form-control" value="{{ old('name', $category->name ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name1">Նորակառույց</label>
+        <input type="text" name="name1" class="form-control" value="{{ old('name1', $category->name1 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name2">Վերելակ</label>
+        <input type="text" name="name2" class="form-control" value="{{ old('name2', $category->name2 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name3">Հարկերի քանակ</label>
+        <input type="number" name="name3" class="form-control" value="{{ old('name3', $category->name3 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name4">Հարկը</label>
+        <input type="number" name="name4" class="form-control" value="{{ old('name4', $category->name4 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name5">Կայանատեղի</label>
+        <input type="text" name="name5" class="form-control" value="{{ old('name5', $category->name5 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name6">Սենյակների քանակ</label>
+        <input type="number" name="name6" class="form-control" value="{{ old('name6', $category->name6 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name7">Սանհանգույցի քանակ</label>
+        <input type="number" name="name7" class="form-control" value="{{ old('name7', $category->name7 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name8">Պատշգամբ</label>
+        <input type="text" name="name8" class="form-control" value="{{ old('name8', $category->name8 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name9">Առաստաղի բարձրություն</label>
+        <input type="text" name="name9" class="form-control" value="{{ old('name9', $category->name9 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name10">Կահույք</label>
+        <input type="text" name="name10" class="form-control" value="{{ old('name10', $category->name10 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name11">Ընդհանուր մակերես</label>
+        <input type="text" name="name11" class="form-control" value="{{ old('name11', $category->name11 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="name12">Վերանորոգված</label>
+        <input type="text" name="name12" class="form-control" value="{{ old('name12', $category->name12 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="slug">Գին</label>
+        <input type="text" name="slug" class="form-control" value="{{ old('slug', $category->slug ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="slug1">Տարադրամ</label>
+        <input type="text" name="slug1" class="form-control" value="{{ old('slug1', $category->slug1 ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="description">Տեսարան</label>
+        <textarea name="description" class="form-control">{{ old('description', $category->description ?? '') }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="image">Image</label>
+        <input type="file" name="image" class="form-control">
+        @if (isset($category) && $category->image)
+            <img src="{{ asset('uploads/category/' . $category->image) }}" width="100" height="100" alt="Category Image">
+        @else
+            <p>No image uploaded</p>
+        @endif
+    </div>
+
+    <h6>SEO Tags</h6>
+
+    <div class="mb-3">
+        <label for="meta_title">Տարածաշրջան</label>
+        <input type="text" name="meta_title" class="form-control" value="{{ old('meta_title', $category->meta_title ?? '') }}">
+    </div>
+
+    <div class="mb-3">
+        <label for="meta_description">Կենցաղային տեխնիկա</label>
+        <textarea rows="3" name="meta_description" class="form-control">{{ old('meta_description', $category->meta_description ?? '') }}</textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="meta_keywords">Գործակալ</label>
+        <textarea rows="3" name="meta_keywords" class="form-control">{{ old('meta_keywords', $category->meta_keywords ?? '') }}</textarea>
+    </div>
+
+    <!-- <button type="submit" class="btn btn-primary">{{ isset($category) ? 'Update' : 'Submit' }}</button> -->
 
                 <h6>SEO Tags</h6>
                 <div class="mb-3">

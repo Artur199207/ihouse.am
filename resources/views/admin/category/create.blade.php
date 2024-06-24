@@ -20,15 +20,67 @@
             <form action="{{ url('admin/add-category') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="name">Անուն</label>
+                    <label for="name">Շինության տիպ</label>
                     <input type="text" name="name" class="form-control" >
                 </div>
                 <div class="mb-3">
-                    <label for="slug">Հասցէ՝</label>
+                    <label for="name1">Նորակառույց</label>
+                    <input type="text" name="name1" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="name2">Վերելակ</label>
+                    <input type="text" name="name2" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="name3">Հարկերի քանակ</label>
+                    <input type="number" name="name3" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="name4">Հարկը</label>
+                    <input type="number" name="name4" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="name5">Կայանատեղի</label>
+                    <input type="text" name="name5" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="name6">Սենյակների քանակ </label>
+                    <input type="number" name="name6" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="name7">Սանհանգույցի քանակ  </label>
+                    <input type="number" name="name7" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="name8">Պատշգամբ</label>
+                    <input type="text" name="name8" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="name9">Առաստաղի բարձրություն </label>
+                    <input type="text" name="name9" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="name10">Կահույք </label>
+                    <input type="text" name="name10" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="name11">Ընդհանուր մակերես </label>
+                    <input type="text" name="name11" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="name12">Վերանորոգված </label>
+                    <input type="text" name="name12" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="slug">Գին</label>
                     <input type="text" name="slug" class="form-control" >
                 </div>
                 <div class="mb-3">
-                    <label for="description">Տեղեկատվություն</label>
+                    <label for="slug1">Տարադրամ</label>
+                    <input type="text" name="slug1" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label for="description">Տեսարան</label>
                     <textarea name="description" class="form-control" ></textarea>
                 </div>
                 <div class="mb-3">
@@ -37,15 +89,15 @@
                 </div>
                 <h6>SEO Tags</h6>
                 <div class="mb-3">
-                    <label for="meta_title">Կոդ ՝</label>
+                    <label for="meta_title">Տարածաշրջան</label>
                     <input type="text" name="meta_title" class="form-control" >
                 </div>
                 <div class="mb-3">
-                    <label for="meta_description">Շինության տիպը`</label>
+                    <label for="meta_description">Կենցաղային տեխնիկա</label>
                     <textarea rows="3" name="meta_description" class="form-control"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="meta_keywords">Տեսակը`</label>
+                    <label for="meta_keywords">Գործակալ</label>
                     <textarea rows="3" name="meta_keywords" class="form-control"></textarea>
                 </div>
                 <h6>Status Mode</h6>
