@@ -75,25 +75,17 @@
               <p class="price">$300,000</p>
             </div>
           </div>
-
         </div>
-
-
-
         <div class="advertisement">
           <h4>{{ $category->meta_keywords }}</h4>
           <img src="{{ asset('uploads/category/' . $category->image) }}" alt="Category Image"
             style="width:200px;height:130px;">
         </div>
       </div>
-
-
-
       @if (!empty($category->image1))
     @php
         $images = json_decode($category->image1, true); 
     @endphp
-
     <div class="col-lg-9 col-sm-4">
         <div class="demo">
             <ul id="lightSlider">
@@ -105,21 +97,13 @@
             </ul>
         </div>
     </div>
-
       
 @else
     <div class="col-lg-9">
         <p>No images available.</p>
     </div>
 @endif
-
-     
-
-
-
-
-
-
+  
     </div>
   </div>
   <div id="myModal" class="modal">
@@ -131,19 +115,20 @@
         <button id="nextBtn">Next</button>
       </div>
     </div>
-
-
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    $('#lightSlider').lightSlider({
+  $('#lightSlider').lightSlider({
     gallery: true,
     item: 1,
-    loop:true,
+    loop: true,
     slideMargin: 0,
-    thumbItem: 9
+    thumbItem: 9,
+    auto: true,
+    pause: 4000, 
+    pauseOnHover: true
 });
   </script>
 
