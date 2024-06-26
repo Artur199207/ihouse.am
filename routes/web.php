@@ -13,7 +13,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 Route::get('tutorial/{category_slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
 Route::get('/listings', [ListingController::class, 'index'])->name('listings.index');
-
+Route::get('/agents', function () {
+    return view('agents');
+})->name('agents');
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
