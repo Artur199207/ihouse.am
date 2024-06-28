@@ -193,6 +193,10 @@
                     @enderror
                 </div>
                 <div class="row">
+                <div class="mb-3">
+                    <label for="des">Նկարագիր</label>
+                    <textarea rows="3" name="des" class="form-control">{{ $category->des }}</textarea>
+                </div>
                     <!-- <div class="col-md-3 mb-3">
                         <label for="navbar_status">Navbar Status</label>
                         <input type="checkbox" name="navbar_status" {{ $category->navbar_status == 1 ? 'checked' : '' }}>

@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <style>
   .demo {
-      width: 850px; /* Adjusted width */
-      margin: 0 auto; /* Center align the container */
+      width: 850px; 
+      margin: 0 auto; 
     }
     .header>a{
       display:inline-block;
@@ -21,8 +21,11 @@
       .hidden-xs{
         display:none !important;
       }
+    }
+    @media screen and (max-width:1000px) {
+      
       .demo{
-
+width: 100%;
       }
     }
 </style>
@@ -86,7 +89,7 @@
     @php
         $images = json_decode($category->image1, true); 
     @endphp
-    <div class="col-lg-9 col-sm-4">
+    <div class=" col-lg-9 col-md-12">
         <div class="demo">
             <ul id="lightSlider">
                 @foreach ($images as $image)
@@ -106,16 +109,13 @@
   
     </div>
   </div>
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <img id="modal-img" src="" />
-      <div class="content__btn">
-        <button id="prevBtn">Previous</button>
-        <button id="nextBtn">Next</button>
-      </div>
-    </div>
-  </div>
+  
+
+
+
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

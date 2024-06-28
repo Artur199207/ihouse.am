@@ -53,6 +53,7 @@ class CreateCategoriesTabel extends Migration
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
+            $table->text('des')->nullable();
             $table->tinyInteger('navbar_status')->default('0');
             $table->tinyInteger('status')->default('0');
             $table->integer('created_by');

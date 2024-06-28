@@ -139,6 +139,7 @@ class CategoryFormRequest extends FormRequest
             'meta_title' => ['nullable', 'string', 'max:200'],
             'meta_description' => ['nullable', 'string'],
             'meta_keywords' => ['nullable', 'string'],
+            'des' => ['nullable', 'string'],
             'navbar_status' => ['nullable'],
             'status' => ['nullable'],
             'image1.*' => 'image|mimes:jpeg,png,jpg,gif|max:35000',

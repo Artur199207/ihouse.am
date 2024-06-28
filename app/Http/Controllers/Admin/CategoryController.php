@@ -169,6 +169,7 @@ class CategoryController extends Controller
         $category->name8 = $data['name8'] ?? null;
         $category->name9 = $data['name9'] ?? null;
         $category->name10 = $data['name10'] ?? null;
+        $category->des = $data['des'] ?? null;
         $category->name11 = $data['name11'] ?? null;
         $category->name12 = $data['name12'] ?? null;
         $category->slug = $data['slug'] ?? null;
@@ -225,6 +226,7 @@ class CategoryController extends Controller
         $category->name10 = $data['name10'] ?? null;
         $category->name11 = $data['name11'] ?? null;
         $category->name12 = $data['name12'] ?? null;
+        $category->des = $data['des'] ?? null;
         $category->slug = $data['slug'] ?? null;
         $category->slug1 = $data['slug1'] ?? null;
         $category->description = $data['description'];
@@ -242,10 +244,13 @@ class CategoryController extends Controller
         }
 
         if ($request->hasFile('image1')) {
+            $imagePaths = [];
             foreach ($request->file('image1') as $file) {
                 $filename = time() . '_' . $file->getClientOriginalName();
                 $file->move(public_path('uploads/category/'), $filename);
+                $imagePaths[] = 'uploads/category/' . $filename; // Store path or filename in array
             }
+            $category->image1 = json_encode($imagePaths); // Store as JSON-encoded string in database
         }
 
         $category->meta_title = $data['meta_title'] ?? null;
@@ -265,7 +270,6 @@ class CategoryController extends Controller
 
         if ($category) {
             $destination = 'uploads/category/' . $category->image;
-
             if (File::exists($destination)) {
                 File::delete($destination);
             }
@@ -276,6 +280,19 @@ class CategoryController extends Controller
             return redirect('admin/category')->with('message', 'Կատեգորիան չի գտնվել');
         }
     }
+
+
+
+   protected function deleteImage($imagePath)
+    {
+        if (!empty($imagePath)) {
+            $destination = public_path('uploads/category/') . $imagePath;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+        }
+    }
+
 }
 
 

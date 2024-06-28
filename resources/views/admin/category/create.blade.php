@@ -86,6 +86,7 @@
                 <div class="mb-3">
                     <label for="image">Image</label>
                     <input type="file" name="image" class="form-control">
+                    
                 </div>
                 <div class="mb-3">
                     <label for="meta_title">Տարածաշրջան</label>
@@ -110,6 +111,10 @@
                 <div id="image-preview" class="mt-3"></div>
 
                 <div class="row">
+                <div class="mb-3">
+                    <label for="des">Նկարագիր</label>
+                    <textarea rows="3" name="des" class="form-control"></textarea>
+                </div>
                     <!-- <div class="col-md-3 mb-3">
                         <label for="navbar_status">Navbar Status</label>
                         <input type="checkbox" name="navbar_status" >
