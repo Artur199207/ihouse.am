@@ -15,10 +15,10 @@
             <div class="col-lg-3 col-sm-3">
                    <h4>Information</h4>
                    <ul class="row">
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.php">About</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="{{ route('agents') }}">Agents</a></li>         
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="{{ route('aboute') }}">Մեր մասին</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="{{ route('agents') }}">Գործակալներ</a></li>         
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="blog.php">Blog</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Կապ</a></li>
               </ul>
             </div>
             
@@ -39,11 +39,13 @@
             </div>
 
              <div class="col-lg-3 col-sm-3">
-                    <h4>Contact us</h4>
+                    <h4>Կապ մեզ հետ</h4>
                     <p><b>Bootstrap Realestate Inc.</b><br>
-<span class="glyphicon glyphicon-map-marker"></span> 8290 Walk Street, Australia <br>
-<span class="glyphicon glyphicon-envelope"></span> hello@bootstrapreal.com<br>
-<span class="glyphicon glyphicon-earphone"></span> (123) 456-7890</p>
+<span class="glyphicon glyphicon-map-marker"></span> Հասցե՝ Մանթաշյան 1 <br>
+<span class="glyphicon glyphicon-envelope"></span> Էլ․ հասցե <br>
+<span class="glyphicon glyphicon-earphone"></span>Հեռ․ 033 61 40 10<br>
+              093 61 40 11
+</p>
             </div>
         </div>
 <p class="copyright">Copyright 2013. All rights reserved.	</p>

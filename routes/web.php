@@ -17,6 +17,9 @@ Route::get('/listings', [ListingController::class, 'index'])->name('listings.ind
 Route::get('/agents', function () {
     return view('agents');
 })->name('agents');
+Route::get('/aboute', function () {
+    return view('aboute');
+})->name('aboute');
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);

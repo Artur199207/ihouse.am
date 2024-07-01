@@ -16,11 +16,11 @@
            
             <div class="navbar-collapse  collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="about.php">About</a></li>
-                    <li><a href="{{ route('agents') }}">Agents</a></li>
+                    <li class="active"><a href="{{ url('/') }}">գլխավոր</a></li>
+                    <li><a href="{{ route('aboute') }}">Մեր մասին</a></li>
+                    <li><a href="{{ route('agents') }}">Գործակալներ</a></li>
                     <li><a href="blog.php">Blog</a></li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="contact.php">Կապ</a></li>
                 </ul>
             </div>
         </div>
@@ -30,7 +30,7 @@
 
 <div class="container">
     <div class="header">
-        <a href="index.php">
+        <a href="{{ url('/') }}">
             <img src="{{asset('assets/image/new_logo.png')}}" alt="ihouse.am" style="width:100px;height:100px;">
         </a>
         <ul class="pull-right">

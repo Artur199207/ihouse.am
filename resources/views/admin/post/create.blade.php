@@ -10,6 +10,14 @@
             <a href="{{ url('admin/add-posts') }}" class="btn btn-primary float-end">Ավելացնել կատեգորիան</a>
         </div>
         <div class="card-body">
+        @if ($errors->any())
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
+                </div>
+            @endif
+
            <form action="{{url('admin/add-posts')}}" method='POST'>
             @csrf
                 <div class="mb-3">

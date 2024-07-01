@@ -186,12 +186,24 @@
   </div>
   <div class="spacer">
     <div class="row">
-      <div class="col-lg-6 col-sm-9 recent-view">
-        <h3>About Us</h3>
-        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
-          1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original
-          form, accompanied by English versions from the 1914 translation by H. Rackham.<br><a href="about.php">Learn
-            More</a></p>
+      <div class="col-lg-12 col-sm-9 recent-view">
+        <h3>Մեր մասին</h3>
+        <p>IHOUSE անշար  գույքի գործակալությունը հիմնադրվել է 2020 թվականին, տնօրեն՝ Արթուր Մուրադյանի կողմից։
+Մենք զբաղվում ենք  անշարժ գույքի` բնակարաններ, 
+առանձնատներ, 
+խանութներ, 
+գրասենյակային տարածքներ,
+հողատարածքներ,
+ավտոտնակներ և  կայանատեղի,
+տնակներ և կրպակներ, 
+առևտրային տարածք, 
+արտադրական տարածք, 
+պահեստ, 
+ռեստորան,  
+հյուրանոց, 
+բազմաֆունկցիոնալ գույքի, 
+առք, վաճառք, վարձակալություն, գնահատում, ինչպես նաև բնակելի և կոմերցիոն տարածքների կառուցապատմամբ։ 
+<br><a href="{{ route('aboute') }}">կարդալ ավելին</a></p>
 
       </div>
       
