@@ -165,11 +165,13 @@
                 </div> -->
                 @php
                     $decodedImages = json_decode($category->image1, true);
-                    dump($decodedImages);  // Output for debugging
+                    
                 @endphp
                 <div class="mb-3">
                     <label>Existing Images</label><br>
-                    @if (!empty($category->image1))
+                    @if($category)
+                   
+                    @if (!empty($category->image1) && json_decode($category->image1, true))
                         @foreach (json_decode($category->image1, true) as $image)
                             @if (Storage::disk('public')->exists('uploads/category/' . $image))
                                 <img src="{{ asset('storage/uploads/category/' . $image) }}" alt="Category Image"
@@ -181,6 +183,7 @@
                         @endforeach
                     @else
                         <p>No images uploaded.</p>
+                    @endif
                     @endif
                 </div>
 

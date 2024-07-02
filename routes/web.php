@@ -12,7 +12,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'index']);
-Route::get('tutorial/{category_slug}',[App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
+Route::get('tutorial/{category_id}',[App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
 Route::get('/listings', [ListingController::class, 'index'])->name('listings.index');
 Route::get('/agents', function () {
     return view('agents');
@@ -33,7 +33,6 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('posts', [App\Http\Controllers\Admin\PostController::class, 'index']);
     Route::get('add-posts', [App\Http\Controllers\Admin\PostController::class, 'create']);
     Route::post('add-posts', [App\Http\Controllers\Admin\PostController::class, 'store']);
-
 
 
 

@@ -12,7 +12,6 @@ class Post1 extends Model
     protected $table = 'posts_table1';
 
     protected $fillable = [
-        'category_id',
 'building',
 'condition',
 'types',
@@ -32,5 +31,7 @@ class Post1 extends Model
 'region',
 'appliances',
 'desi',
+'image',
+'image2',
     ];
 }

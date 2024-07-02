@@ -15,7 +15,6 @@ class CreatePostsTable1 extends Migration
     {
         Schema::create('posts_table1', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id');
             $table->string('building');
             $table->string('condition');
             $table->string('types');
@@ -31,6 +30,8 @@ class CreatePostsTable1 extends Migration
             $table->string('change');
             $table->string('amenities');
             $table->string('agent');
+            $table->string('image')->nullable();
+            $table->string('image2')->nullable();
             $table->mediumText('communications');
             $table->string('region');
             $table->string('appliances');
