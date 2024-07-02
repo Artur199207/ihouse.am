@@ -5,6 +5,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.min.css"> 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> 
 <style> 
+.hot-properties.hidden-xs {
+    height: 550px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .lSAction>a{
   z-index: 1 !important;
 }
@@ -46,7 +52,7 @@
     .modal-content { 
       margin: auto; 
       display: block; 
-      width: 80%; 
+      width: 60%; 
     } 
     .modal-content, #caption {   
       animation-name: zoom; 
@@ -117,34 +123,6 @@
             <div class="col-lg-8 col-sm-7"> 
               <h5><a href="property-detail.php">Integer sed porta quam</a></h5> 
               <p class="price">$300,000</p> 
-            </div> 
-          </div> 
-          <div class="row"> 
-            <div class="col-lg-4 col-sm-5"><img src="{{ asset('assets/images/2.jpg') }}" 
-                class="img-responsive img-circle" alt="properties" /></div> 
-            <div class="col-lg-8 col-sm-7"> 
-              <h5><a href="property-detail.php">Integer sed porta quam</a></h5> 
-              <p class="price">$300,000</p> 
-            </div> 
-          </div> 
- 
-          <div class="row"> 
-            <div class="col-lg-4 col-sm-5"><img src="{{ asset('assets/images/3.jpg') }}" 
-                class="img-responsive img-circle" alt="properties" /></div> 
-            <div class="col-lg-8 col-sm-7"> 
-              <h5><a href="property-detail.php">Integer sed porta quam</a></h5> 
-              <p class="price">$300,000</p> 
-            </div> 
-          </div> 
- 
-          <div class="row"> 
-            <div class="col-lg-4 col-sm-5"><img src="{{ asset('assets/images/4.jpg') }}" 
-                class="img-responsive img-circle" alt="properties" /></div> 
-            <div class="col-lg-8 col-sm-7"> 
-              <h5><a href="property-detail.php">Integer sed porta quam</a></h5>
-
-Armen Barkhudaryan, [01.07.2024 16:49]
-<p class="price">$300,000</p> 
             </div> 
           </div> 
         </div> 
