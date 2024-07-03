@@ -18,7 +18,7 @@
 
             <div class="sl-slider">
 
-                <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25"
+                <div class="sl-slide"  data-slice1-rotation="-25" data-slice2-rotation="-25"
                     data-slice1-scale="2" data-slice2-scale="2">
                     <div class="sl-slide-inner">
                         <div class="bg-img bg-img-1"></div>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
 
-                <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15"
+                <div class="sl-slide"  data-slice1-rotation="10" data-slice2-rotation="-15"
                     data-slice1-scale="1.5" data-slice2-scale="1.5">
                     <div class="sl-slide-inner">
                         <div class="bg-img bg-img-2"></div>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
 
-                <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3"
+                <div class="sl-slide"  data-slice1-rotation="3" data-slice2-rotation="3"
                     data-slice1-scale="2" data-slice2-scale="1">
                     <div class="sl-slide-inner">
                         <div class="bg-img bg-img-3"></div>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
 
-                <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25"
+                <div class="sl-slide"  data-slice1-rotation="-5" data-slice2-rotation="25"
                     data-slice1-scale="2" data-slice2-scale="1">
                     <div class="sl-slide-inner">
                         <div class="bg-img bg-img-4"></div>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
 
-                <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10"
+                <div class="sl-slide"  data-slice1-rotation="-5" data-slice2-rotation="10"
                     data-slice1-scale="2" data-slice2-scale="1">
                     <div class="sl-slide-inner">
                         <div class="bg-img bg-img-5"></div>
