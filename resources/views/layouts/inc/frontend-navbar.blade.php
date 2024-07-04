@@ -19,8 +19,8 @@
                     <li class="active"><a href="{{ url('/') }}">գլխավոր</a></li>
                     <li><a href="{{ route('aboute') }}">Մեր մասին</a></li>
                     <li><a href="{{ route('agents') }}">Գործակալներ</a></li>
-                    <li><a href="blog.php">Blog</a></li>
-                    <li><a href="contact.php">Կապ</a></li>
+                    <li><a href="{{ route('evaluation') }}">Գնահատում</a></li>
+                    <li><a href="{{ route('email') }}">Կապ</a></li>
                 </ul>
             </div>
         </div>

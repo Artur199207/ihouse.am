@@ -17,8 +17,8 @@
                    <ul class="row">
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="{{ route('aboute') }}">Մեր մասին</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="{{ route('agents') }}">Գործակալներ</a></li>         
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="blog.php">Blog</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Կապ</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="{{ route('evaluation') }}">Գնահատում</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="{{ route('email') }}">Կապ</a></li>
               </ul>
             </div>
             

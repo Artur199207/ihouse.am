@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\SomeController; 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -20,6 +21,14 @@ Route::get('/agents', function () {
 Route::get('/aboute', function () {
     return view('aboute');
 })->name('aboute');
+
+Route::get('/evaluation', function () {
+    return view('evaluation');
+})->name('evaluation');
+Route::get('/mail', function () {
+    return view('email');
+})->name('email');
+
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
