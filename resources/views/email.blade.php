@@ -94,7 +94,7 @@
             <div class="col-md-8 mx-auto">
                 <div class="contact-form">
                     @if (session()->has('message'))
-                        <div class="alert alert-success">{{ session()->get('message') }} </div>
+                        <div class="alert alert-success">Ձեր Հաղորդագրությունը հաջողությամբ ուղղարկվե է </div>
                     @endif
                     <form action="{{ route('send.email') }}" method="post">@csrf <div class="row">
                             <div class="col-sm-12">
