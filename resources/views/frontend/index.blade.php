@@ -181,7 +181,7 @@
                                     style="width:200px;height:130px;">
                             </div>
                             <h4>
-                                <a href="{{ url('tutorial/' . $category->slug) }}">{{ $category->name }}</a>
+                                <a href="{{ url('tutorial/' . $category->slug) }}">{{ $category->slug }} $</a>
                             </h4>
                             <p class="price">{{ $category->meta_title }}</p>
                             <div class="listing-detail">

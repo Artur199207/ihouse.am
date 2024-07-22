@@ -161,8 +161,65 @@
     </div>
     <div class="container">
         <div class="properties-listing spacer">
-
             <div class="row">
+                @if (!empty($category->image1))
+                    @php
+                        $images = json_decode($category->image1, true);
+                    @endphp
+                    <div class="col-lg-9 col-md-12">
+                        <div class="demo">
+                            <ul id="lightSlider">
+                                @foreach ($images as $image)
+                                    <li data-thumb="{{ asset($image) }}">
+                                        <img src="{{ asset($image) }}" alt="Category Image" class="contnet_image">
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <div class="mb-3 md_mb-5">
+                            <h2>Նկարագիր</h2>
+                            <span>{{ $category->des }}</span>
+                        </div>
+                    </div>
+                    <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+                    </div>
+                @else
+                    <div class="col-lg-9">
+                        <p>No images available.</p>
+                    </div>
+                @endif
+            
+                <div class="col-lg-3 col-sm-4">
+                    <div class="row rowwing">
+                        @foreach (['name' => 'Շինության տիպ', 'name1' => 'Նորակառույց', 'name2' => 'Վերելակ', 'name3' => 'Հարկերի քանակ', 'name4' => 'Հարկը', 'name5' => 'Կայանատեղի', 'name6' => 'Սենյակների քանակ', 'name7' => 'Սանհանգույցի քանակ', 'name8' => 'Պատշգամբ', 'name9' => 'Առաստաղի բարձրություն', 'name10' => 'Կահույք', 'name11' => 'Ընդհանուր մակերես', 'name12' => 'Վերանորոգված', 'slug' => 'Գին', 'slug1' => 'Տեսարան', 'description' => 'Կոդ', 'meta_title' => 'Տարածաշրջան', 'meta_description' => 'Կենցաղային տեխնիկա', 'meta_keywords' => 'Գործակալ'] as $key => $label)
+                            @if (!empty($category->$key))
+                                <div class="mb-3 d-flexisi">
+                                    <h2>{{ $label }}</h2>
+                                    @if ($key == 'slug')
+                                        @php
+                                            $priceInDram = $category->slug;
+                                            $priceInDollar = round($priceInDram * 395, 2);
+                                        @endphp
+                                        <p>{{ $priceInDollar }} AMD  /  {{ $priceInDram }}USD </p>
+                                     
+                                    @else
+                                        <p>{{ $category->$key }}</p>
+                                    @endif
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            {{-- <div class="row">
 
                 @if (!empty($category->image1))
                     @php
@@ -276,7 +333,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>

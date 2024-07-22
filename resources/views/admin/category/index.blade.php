@@ -20,12 +20,12 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Category Name</th>
-                <th>Image</th>
-                <th>slug</th>
-                <th>KOD</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Անուն</th>
+                <th>նկար</th>
+                <th>Գին</th>
+                <th>Կոդ</th>
+                <th>փոփոխել</th>
+                <th>ջնջել</th>
             </tr>
         </thead>
         <tbody>
@@ -37,7 +37,7 @@
                         <img src="{{ asset('uploads/category/' . $item->image) }}" width="50px" height="50px" alt="ihouse">
                     </td>
                     <td>{{ $item->slug}}</td>
-                    <td>{{$item->meta_title}}</td>
+                    <td>{{$item->description}}</td>
                     <td>
                         <a href="{{ url('admin/edit-category/' . $item->id) }}" class="btn btn-success">Edit</a>
                     </td>

@@ -76,11 +76,11 @@
                     <input type="text" name="slug" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label for="slug1">Տարադրամ</label>
+                    <label for="slug1">Տեսարան</label>
                     <input type="text" name="slug1" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label for="description">Տեսարան</label>
+                    <label for="description">կոդ</label>
                     <textarea name="description" class="form-control"></textarea>
                 </div>
                 <div class="mb-3">

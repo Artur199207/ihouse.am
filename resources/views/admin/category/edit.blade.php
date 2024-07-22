@@ -109,13 +109,13 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="slug1">Տարադրամ</label>
+                    <label for="slug1">Տեսարան</label>
                     <input type="text" name="slug1" class="form-control"
                         value="{{ old('slug1', $category->slug1 ?? '') }}">
                 </div>
 
                 <div class="mb-3">
-                    <label for="description">Տեսարան</label>
+                    <label for="description">կոդ</label>
                     <textarea name="description"
                         class="form-control">{{ old('description', $category->description ?? '') }}</textarea>
                 </div>

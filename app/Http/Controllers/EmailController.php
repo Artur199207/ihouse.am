@@ -25,11 +25,12 @@ class EmailController extends Controller
           'subject' => $request->subject,
           'name' => $request->name,
           'email' => $request->email,
-          'content' => $request->content
+          'content' => $request->content,
+          
         ];
 
         Mail::send('email-template', $data, function($message) use ($data) {
-          $message->to($data['email'])
+          $message->to('')
           ->subject($data['subject']);
         });
 

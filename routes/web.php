@@ -44,8 +44,6 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::post('add-posts', [App\Http\Controllers\Admin\PostController::class, 'store']);
 
 
-
-
 });
 
 
