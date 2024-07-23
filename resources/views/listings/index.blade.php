@@ -21,8 +21,8 @@
     </style>
     <div class="inside-banner">
         <div class="container">
-            <span class="pull-right"><a href="{{ url('/') }}">Home</a> / Buy, Sale & Rent</span>
-            <h2>Buy, Sale & Rent</h2>
+            <span class="pull-right"><a href="{{ url('/') }}">Գլխավոր էջ</a> / Գնումներ, Վաճառք և Վարձակալություն</span>
+            <h2>Գնումներ, Վաճառք և Վարձակալություն</h2>
         </div>
     </div>
     <!-- banner -->
@@ -36,26 +36,55 @@
 
                     <div class="search-form">
                         <h4><span class="glyphicon glyphicon-search"></span> Search for</h4>
-                        <input type="text" class="form-control" placeholder="Search of Properties">
+                        
                         <div class="row">
-                            <div class="col-lg-5">
+                           
+                            <div class="col-lg-12">
                                 <select class="form-control">
-                                    <option>Buy</option>
-                                    <option>Rent</option>
-                                    <option>Sale</option>
+                                    <option value="">Համայնք</option>
+                                    <option value="">Արաբկիր</option>
+                                    <option value="">Դավիթաշեն</option>
+                                    <option value="">Կենտրոն</option>
+                                    <option value="">Աջափնյակ</option>
+                                    <option value="">Ավան</option>
+                                    <option value="">Էրեբունի</option>
+                                    <option value="">Մալաթիա-Սեբաստիա</option>
+                                    <option value="">Նոր-Նորք</option>
+                                    <option value="">Նորք-Մարաշ</option>
+                                    <option value="">Նուբարաշեն</option>
+                                    <option value="">Շենգավիթ</option>
+                                    <option value="">Քանաքեռ-Զեյթուն</option>
+                                    <option value="">Դպրոցականների</option>
+                                    <option value="">Գյուղ Գետափնյա</option>
+                                    <option value="">Պռոշյան սովխոզ</option>
+                                    <option value="">Վահագնի թաղամաս</option>
+                                    <option value="">Փոքր կենտրոն</option>
+                                    <option value="">Ջրվեժ</option>
+                                    <option value="">Ձորաղբյուր</option>
+                                    <option value="">Էջմիածին</option>
                                 </select>
                             </div>
-                            <div class="col-lg-7">
+                            <div class="col-lg-12">
                                 <select class="form-control">
-                                    <option>Price</option>
-                                    <option>$150,000 - $200,000</option>
-                                    <option>$200,000 - $250,000</option>
-                                    <option>$250,000 - $300,000</option>
-                                    <option>$300,000 - above</option>
+                                    <option>Բնակարաններ</option>
+                                    <option>Բնակարաններ</option>
+                                    <option>Առանձնատներ</option>
+                                    <option>Հողատարածքներ</option>
+                                    <option>Արտադրական տարածք </option>
+                                    <option>Գրասենյակային տարածք  </option>
+                                    <option>Պահեստ  </option>
+                                    <option>Ավտոտնակներ և կայանատեղի</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-12 col-sm-4">
+                                <select class="form-control">
+                                    <option>Վարձակալություն</option>
+                                    <option>Վարձակալություն</option>
+                                    <option>Վաճառք</option>
                                 </select>
                             </div>
                         </div>
-                        <button class="btn btn-primary">Find Now</button>
+                        <button class="btn btn-primary">Փնտրել</button>
 
                     </div>
 
