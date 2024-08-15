@@ -11,7 +11,18 @@ use App\Models\Post;
 class FrontendController extends Controller
 {
    public function index(){
-    return view('frontend.index');
+      If(!count(request()->all()))
+      {
+         $categories = Category::get();
+      }
+      
+   
+
+
+      return view('frontend.index', [
+            
+         'categories' => $categories,
+     ]);
    }
 
    public function viewCategoryPost($category_slug){

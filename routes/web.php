@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\SomeController; 
+use App\Http\Controllers\Admin\CategoryController1;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -28,7 +29,7 @@ Route::get('/evaluation', function () {
 Route::get('/mail', function () {
     return view('email');
 })->name('email');
-
+Route::get('/filter-categories', [App\Http\Controllers\Admin\CategoryController::class, 'filter'])->name('filter.categories');
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
@@ -38,6 +39,16 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('edit-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
     Route::put('update-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);
     Route::get('delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+
+
+
+    Route::get('categ', [CategoryController1::class, 'index'])->name('admin.categ.index');
+    Route::get('add-categ', [CategoryController1::class, 'create'])->name('admin.categ.create');
+    Route::post('add-categ', [CategoryController1::class, 'store'])->name('admin.categ.create');
+
+
+
+
 
     Route::get('posts', [App\Http\Controllers\Admin\PostController::class, 'index']);
     Route::get('add-posts', [App\Http\Controllers\Admin\PostController::class, 'create']);

@@ -17,15 +17,15 @@
                     </div>
                 @endif
 
-                <form action="{{ url('admin/add-category') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('admin/add-categ') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     {{-- <div class="mb-3">
                     <label for="name">Շինության տիպ</label>
                     <input type="text" name="name" class="form-control" >
                 </div> --}}
                     <div class="mb-3">
-                        <label for="name">Տարածաշրջանը</label>
-                        <select id="region" name="name" class="form-control">
+                        <label for="name100">Տարածաշրջանը</label>
+                        <select id="region" name="name100" class="form-control">
                             <option value="">Ընտրել տարածաշրջանը</option>
                             <option value="Yerevan">Երևան</option>
                             <option value="Armavir">Արմավիր</option>
@@ -53,52 +53,52 @@
 
 
                     <div class="mb-3">
-                        <label for="name1">Փողոց</label>
-                        <input type="text" name="name1" class="form-control">
+                        <label for="name101">Փողոց</label>
+                        <input type="text" name="name101" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name2">Շինության տիպ</label>
-                        <input type="text" name="name2" class="form-control">
+                        <label for="name102">Շինության տիպ</label>
+                        <input type="text" name="name102" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name3">Նորակառույց</label>
-                        <input type="text" name="name3" class="form-control">
+                        <label for="name103">Նորակառույց</label>
+                        <input type="text" name="name103" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name4">Վերելակ</label>
-                        <input type="text" name="name4" class="form-control">
+                        <label for="name104">Վերելակ</label>
+                        <input type="text" name="name104" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name5">Հարկերի քանակ</label>
-                        <input type="text" name="name5" class="form-control">
+                        <label for="name105">Հարկերի քանակ</label>
+                        <input type="text" name="name105" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name6">Կայանատեղի </label>
-                        <input type="text" name="name6" class="form-control">
+                        <label for="name106">Կայանատեղի </label>
+                        <input type="text" name="name106" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name7">Ընդհանուր մակերես </label>
-                        <input type="text" name="name7" class="form-control">
+                        <label for="name107">Ընդհանուր մակերես </label>
+                        <input type="text" name="name107" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name8">Սենյակների քանակ</label>
-                        <input type="text" name="name8" class="form-control">
+                        <label for="name108">Սենյակների քանակ</label>
+                        <input type="text" name="name108" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name9">Սանհանգույցների քանակ </label>
-                        <input type="text" name="name9" class="form-control">
+                        <label for="name109">Սանհանգույցների քանակ </label>
+                        <input type="text" name="name109" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name10">Առաստաղի բարձրություն </label>
-                        <input type="text" name="name10" class="form-control">
+                        <label for="name110">Առաստաղի բարձրություն </label>
+                        <input type="text" name="name110" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name11">Հարկ </label>
-                        <input type="text" name="name11" class="form-control">
+                        <label for="name111">Հարկ </label>
+                        <input type="text" name="name111" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name12">Պատշգամբ </label>
-                        <input type="text" name="name12" class="form-control">
+                        <label for="name112">Պատշգամբ </label>
+                        <input type="text" name="name112" class="form-control">
                     </div>
 
 
@@ -108,54 +108,58 @@
 
 
                     <div class="mb-3">
-                        <label for="name13">Կահույք</label>
-                        <input type="text" name="name13" class="form-control">
+                        <label for="name113">Կահույք</label>
+                        <input type="text" name="name113" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name14">Վերանորոգում</label>
-                        <input type="text" name="name14" class="form-control">
+                        <label for="name114">Վերանորոգում</label>
+                        <input type="text" name="name114" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name15">Հարմարություններ</label>
-                        <input type="text" name="name15" class="form-control">
+                        <label for="name115">Հարմարություններ</label>
+                        <input type="text" name="name115" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name16">Կենցաղային տեխնիկա</label>
-                        <input type="text" name="name16" class="form-control">
+                        <label for="name116">Կենցաղային տեխնիկա</label>
+                        <input type="text" name="name116" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name17">Տեսարան պատուհանից
+                        <label for="name117">Տեսարան պատուհանից
                         </label>
-                        <input type="text" name="name17" class="form-control">
+                        <input type="text" name="name117" class="form-control">
                     </div>
  
 
                     <div class="mb-3">
-                        <label for="slug">Գին</label>
-                        <input type="text" name="slug" class="form-control">
+                        <label for="name118">Գին</label>
+                        <input type="text" name="name118" class="form-control">
                     </div>
 
+                    <div class="mb-3">
+                        <label for="name119">կոդ</label>
+                        <textarea name="name119" class="form-control"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image001">Image</label>
+                        <input type="file" name="image001" class="form-control">
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="name119">Գործակալ</label>
+                        <textarea rows="3" name="name119" class="form-control"></textarea>
+                    </div>
+                     <div class="mb-3">
+                        <label for="name118">Գործակալի Հեռ․՝</label>
+                        <input type="text" name="name118" class="form-control">
+                    </div>
                     <div class="mb-3">
                         <label for="description">կոդ</label>
                         <textarea name="description" class="form-control"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="image">Image</label>
-                        <input type="file" name="image" class="form-control">
-
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="meta_keywords">Գործակալ</label>
-                        <textarea rows="3" name="meta_keywords" class="form-control"></textarea>
-                    </div>
-                     <div class="mb-3">
-                        <label for="meta_title">Գործակալի Հեռ․՝</label>
-                        <input type="text" name="meta_title" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="image1">Նոր նկարներ (մուլտիմեդիա)</label>
-                        <input type="file" name="image1[]" class="form-control" id="image1"
+                        <label for="image002">Նոր նկարներ (մուլտիմեդիա)</label>
+                        <input type="file" name="image002[]" class="form-control" id="image1"
                             aria-describedby="emailHelp" multiple>
                         @error('image1')
                             <span class="text-danger">{{ $message }}</span>
@@ -165,8 +169,8 @@
 
                     <div class="row">
                         <div class="mb-3">
-                            <label for="des">Նկարագիր</label>
-                            <textarea rows="3" name="des" class="form-control"></textarea>
+                            <label for="name120">Նկարագիր</label>
+                            <textarea rows="3" name="name120" class="form-control"></textarea>
                         </div>
 
                         <div class="col-md-6">

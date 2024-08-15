@@ -32,7 +32,7 @@
         <div class="properties-listing spacer">
 
             <div class="row">
-                <div class="col-lg-3 col-sm-4 ">
+                {{-- <div class="col-lg-3 col-sm-4 ">
 
                     <div class="search-form">
                         <h4><span class="glyphicon glyphicon-search"></span> Search for</h4>
@@ -89,9 +89,9 @@
                     </div>
 
 
-                </div>
+                </div> --}}
 
-                <div class="col-lg-9 col-sm-8 ">
+                <div class="col-lg-12 col-sm-8 ">
                     <div class="d-flex col-lg-12 ">
                         @php
                             $categories = App\Models\Category::get();

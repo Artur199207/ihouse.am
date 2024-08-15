@@ -18,8 +18,8 @@
 
             <div class="sl-slider">
 
-                <div class="sl-slide"  data-slice1-rotation="-25" data-slice2-rotation="-25"
-                    data-slice1-scale="2" data-slice2-scale="2">
+                <div class="sl-slide" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2"
+                    data-slice2-scale="2">
                     <div class="sl-slide-inner">
                         <div class="bg-img bg-img-1"></div>
                         <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
@@ -33,8 +33,8 @@
                     </div>
                 </div>
 
-                <div class="sl-slide"  data-slice1-rotation="10" data-slice2-rotation="-15"
-                    data-slice1-scale="1.5" data-slice2-scale="1.5">
+                <div class="sl-slide" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5"
+                    data-slice2-scale="1.5">
                     <div class="sl-slide-inner">
                         <div class="bg-img bg-img-2"></div>
                         <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
@@ -48,8 +48,8 @@
                     </div>
                 </div>
 
-                <div class="sl-slide"  data-slice1-rotation="3" data-slice2-rotation="3"
-                    data-slice1-scale="2" data-slice2-scale="1">
+                <div class="sl-slide" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2"
+                    data-slice2-scale="1">
                     <div class="sl-slide-inner">
                         <div class="bg-img bg-img-3"></div>
                         <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
@@ -63,8 +63,8 @@
                     </div>
                 </div>
 
-                <div class="sl-slide"  data-slice1-rotation="-5" data-slice2-rotation="25"
-                    data-slice1-scale="2" data-slice2-scale="1">
+                <div class="sl-slide" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2"
+                    data-slice2-scale="1">
                     <div class="sl-slide-inner">
                         <div class="bg-img bg-img-4"></div>
                         <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
@@ -78,8 +78,8 @@
                     </div>
                 </div>
 
-                <div class="sl-slide"  data-slice1-rotation="-5" data-slice2-rotation="10"
-                    data-slice1-scale="2" data-slice2-scale="1">
+                <div class="sl-slide" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2"
+                    data-slice2-scale="1">
                     <div class="sl-slide-inner">
                         <div class="bg-img bg-img-5"></div>
                         <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
@@ -107,89 +107,93 @@
     </div>
     </div>
 
+    {{-- <label for="meta_title">Meta Title:</label>
+    <select name="meta_title" id="meta_title">
+        <option value="">Select Meta Title</option>
+        @foreach ($metaTitles as $title)
+            <option value="{{ $title }}">{{ $title }}</option>
+        @endforeach
+    </select>
 
+    <label for="name_14">Name 14:</label>
+    <select name="name_14" id="name_14">
+        <option value="">Select Name 14</option>
+        @foreach ($name14Options as $name)
+            <option value="{{ $name }}">{{ $name }}</option>
+        @endforeach
+    </select>
+
+    <button type="submit">Filter</button> --}}
 
     <div class="banner-search">
         <div class="container">
             <!-- banner -->
-            <h3>Buy, Sale & Rent</h3>
             <div class="searchbar">
                 <div class="row">
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="row">
-                            <div class="col-lg-3 col-sm-3 ">
-                                <select class="form-control">
-                                    <option value="">Համայնք</option>
-                                    <option value="">Արաբկիր</option>
-                                    <option value="">Դավիթաշեն</option>
-                                    <option value="">Կենտրոն</option>
-                                    <option value="">Աջափնյակ</option>
-                                    <option value="">Ավան</option>
-                                    <option value="">Էրեբունի</option>
-                                    <option value="">Մալաթիա-Սեբաստիա</option>
-                                    <option value="">Նոր-Նորք</option>
-                                    <option value="">Նորք-Մարաշ</option>
-                                    <option value="">Նուբարաշեն</option>
-                                    <option value="">Շենգավիթ</option>
-                                    <option value="">Քանաքեռ-Զեյթուն</option>
-                                    <option value="">Դպրոցականների</option>
-                                    <option value="">Գյուղ Գետափնյա</option>
-                                    <option value="">Պռոշյան սովխոզ</option>
-                                    <option value="">Վահագնի թաղամաս</option>
-                                    <option value="">Փոքր կենտրոն</option>
-                                    <option value="">Ջրվեժ</option>
-                                    <option value="">Ձորաղբյուր</option>
-                                    <option value="">Էջմիածին</option>
-                                </select>
+                    <form action="{{ route('filter.categories') }}" method="GET">
+                        <div class="col-lg-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 col-sm-4 ">
+                                    <label for="name14">Տարածաշրջան</label>
+                                    <select name="name14" id="name14" class="form-control">
+                                        <option value="Համայնք">Համայնք</option>
+                                        <option value="Արաբկիր">Արաբկիր</option>
+                                        <option value="Դավիթաշեն">Դավիթաշեն</option>
+                                        <option value="Կենտրոն">Կենտրոն</option>
+                                        <option value="Աջափնյակ">Աջափնյակ</option>
+                                        <option value="Ավան">Ավան</option>
+                                        <option value="Էրեբունի">Էրեբունի</option>
+                                        <option value="Մալաթիա-Սեբաստիա">Մալաթիա-Սեբաստիա</option>
+                                        <option value="Նոր-Նորք">Նոր-Նորք</option>
+                                        <option value="Նորք-Մարաշ">Նորք-Մարաշ</option>
+                                        <option value="Նուբարաշեն">Նուբարաշեն</option>
+                                        <option value="Շենգավիթ">Շենգավիթ</option>
+                                        <option value="Քանաքեռ-Զեյթուն">Քանաքեռ-Զեյթուն</option>
+                                        <option value="Դպրոցականների">Դպրոցականների</option>
+                                        <option value="Գյուղ Գետափնյա">Գյուղ Գետափնյա</option>
+                                        <option value="Պռոշյան սովխոզ">Պռոշյան սովխոզ</option>
+                                        <option value="Վահագնի թաղամաս">Վահագնի թաղամաս</option>
+                                        <option value="Փոքր կենտրոն">Փոքր կենտրոն</option>
+                                        <option value="Ջրվեժ">Ջրվեժ</option>
+                                        <option value="Ձորաղբյուր">Ձորաղբյուր</option>
+                                        <option value="Էջմիածին">Էջմիածին</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-4">
+                                    <label for="meta_title">Տեսակ</label>
+                                    <select name="meta_title" id="meta_title" class="form-control">
+                                        <option value="">Տեսակ</option>
+                                        <option value="Բնակարաններ">Բնակարաններ</option>
+                                        <option value="Առանձնատներ">Առանձնատներ</option>
+                                        <option value="Հողատարածքներ">Հողատարածքներ</option>
+                                        <option value="Արտադրական տարածք">Արտադրական տարածք </option>
+                                        <option value="Գրասենյակային տարածք">Գրասենյակային տարածք </option>
+                                        <option value="Պահեստ">Պահեստ </option>
+                                        <option value="Ավտոտնակներ և կայանատեղի">Ավտոտնակներ և կայանատեղի</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-sm-4">
+                                    <label for="meta_title">Որոնել</label>
+                                    <button class="btn btn-success" type="submit">Որոնել</button>
+                                </div>
                             </div>
-                            <div class="col-lg-3 col-sm-4">
-                                <select class="form-control">
-                                    <option>Բնակարաններ</option>
-                                    <option>Բնակարաններ</option>
-                                    <option>Առանձնատներ</option>
-                                    <option>Հողատարածքներ</option>
-                                    <option>Արտադրական տարածք </option>
-                                    <option>Գրասենյակային տարածք  </option>
-                                    <option>Պահեստ  </option>
-                                    <option>Ավտոտնակներ և կայանատեղի</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-3 col-sm-4">
-                                <select class="form-control">
-                                    <option>Վարձակալություն</option>
-                                    <option>Վարձակալություն</option>
-                                    <option>Վաճառք</option>
-                                </select>
-                            </div>
-                            <div class="col-lg-3 col-sm-4">
-                                <button class="btn btn-success" onclick="window.location.href='{{ route('listings.index') }}'">Որոնել</button>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <!-- <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
-              <p>Join now and get updated with all the properties deals.</p>
-              <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Login</button>
-            </div>  -->
+                    </form>
                 </div>
+                <!-- <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
+                              <p>Join now and get updated with all the properties deals.</p>
+                              <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Login</button>
+                            </div>  -->
             </div>
         </div>
+    </div>
     </div>
     <!-- banner -->
     <div class="container">
         <div class="properties-listing spacer">
-
             <div class="content_flex">
-                <h2>Featured Properties</h2>
-                @php
-                    $categories = App\Models\Category::get();
-                @endphp
+                <h2>Bnakaranner</h2>
                 <a href="{{ route('listings.index') }}">View Listings</a>
             </div>
-
-
-
             <div id="owl-example" class="owl-carousel">
                 @foreach ($categories as $category)
                     <div class="item">
@@ -209,10 +213,41 @@
                         </div>
                     </div>
                 @endforeach
-
-
             </div>
         </div>
+
+
+        
+        <div class="properties-listing spacer">
+            <div class="content_flex">
+                <h2>TownHouse</h2>
+                <a href="{{ route('listings.index') }}">View Listings</a>
+            </div>
+            <div id="owl-example" class="owl-carousel">
+                @foreach ($categories as $category)
+                    <div class="item">
+                        <div class="properties">
+                            <div class="image-holder">
+                                <img src="{{ asset('uploads/category/' . $category->image) }}" alt="Category Image"
+                                    style="width:200px;height:130px;">
+                            </div>
+                            <h4>
+                                <a href="{{ url('tutorial/' . $category->slug) }}">{{ $category->slug }} $</a>
+                            </h4>
+                            <p class="price">{{ $category->meta_title }}</p>
+                            <div class="listing-detail">
+                                <p class="price">{{ $category->description }}</p>
+                            </div>
+                            <a class="btn btn-primary" href="{{ url('tutorial/' . $category->slug) }}">Տեսնել ավելին</a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+
+
+
         <div class="spacer">
             <div class="row">
                 <div class="col-lg-12 col-sm-9 recent-view">

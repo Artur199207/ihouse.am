@@ -1,132 +1,5 @@
 <?php
 
-// namespace App\Http\Controllers\Admin;
-// use Illuminate\Support\Facades\File;
-// use App\Http\Controllers\Controller;
-// use App\Models\Category;
-// use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\Auth;
-// use App\Http\Requests\Admin\CategoryFormRequest;
-// class CategoryController extends Controller
-
-// {
-//     public function index()
-//     {
-//         $category = Category::all();
-//         return view('admin.category.index', compact('category'));
-
-//     }
-
-//     public function create()
-//     {
-//         return view('admin.category.create');
-//     }
-
-//     public function store(CategoryFormRequest $request)
-//     {
-
-//         $data = $request->validated();
-
-//         $category = new Category;
-//         $category->name = $data['name'];
-//         $category->slug = $data['slug'];
-//         $category->description = $data['description'];
-
-//         if ($request->hasFile('image')) {
-//             try {
-//                 $file = $request->file('image');
-//                 $filename = time() . '.' . $file->getClientOriginalExtension();
-//                 $file->move(public_path('uploads/category/'), $filename);
-//                 $category->image = $filename;
-//             } catch (\Exception $e) {
-//                 return redirect()->back()->with('error', 'Failed to upload image: ' . $e->getMessage());
-//             }
-//         }
-
-//         $category->meta_title = $data['meta_title'] ?? null;
-//         $category->meta_description = $data['meta_description'] ?? null;
-//         $category->meta_keywords = $data['meta_keywords'] ?? null;
-//         $category->navbar_status = $request->has('navbar_status') ? '1' : '0';
-//         $category->status = $request->has('status') ? '1' : '0';
-//         $category->created_by = Auth::user()->id;
-//         $category->save();
-
-//         return redirect('admin/category')->with('message', 'Category added successfully');
-//     }
-//     public function edit($category_id)
-//     {
-//         $category = Category::find($category_id);
-//         return view('admin.category.edit', compact('category'));
-//     }
-
-//     public function update(CategoryFormRequest $request,$category_id){
-//         $data = $request->validated();
-
-//         $category =  Category::find($category_id);
-//         $category->name = $data['name'];
-//         $category->slug = $data['slug'];
-//         $category->description = $data['description'];
-
-//         if ($request->hasFile('image')) {
-
-// $destination = 'uploads/category/'.$category->image;
-// if (File::exists($destination)) {
-//     File::delete($destination);
-// }
-
-
-
-//             try {
-//                 $file = $request->file('image');
-//                 $filename = time() . '.' . $file->getClientOriginalExtension();
-//                 $file->move(public_path('uploads/category/'), $filename);
-//                 $category->image = $filename;
-//             } catch (\Exception $e) {
-//                 return redirect()->back()->with('error', 'Failed to upload image: ' . $e->getMessage());
-//             }
-//         }
-
-//         $category->meta_title = $data['meta_title'] ?? null;
-//         $category->meta_description = $data['meta_description'] ?? null;
-//         $category->meta_keywords = $data['meta_keywords'] ?? null;
-//         $category->navbar_status = $request->has('navbar_status') ? '1' : '0';
-//         $category->status = $request->has('status') ? '1' : '0';
-//         $category->created_by = Auth::user()->id;
-//         $category->update();
-
-//         return redirect('admin/category')->with('message', 'Կատեգորիան հաջողությամբ ավելացվեց');
-//     }
-
-
-//     public function destroy($category_id)
-// {
-//     $category = Category::find($category_id);
-
-//     if ($category) {
-//         // Construct the path to the image file
-//         $destination = 'uploads/category/' . $category->image;
-
-//         // Check if the file exists and delete it
-//         if (File::exists($destination)) {
-//             File::delete($destination);
-//         }
-
-//         // Delete the category record
-//         $category->delete();
-
-//         return redirect('admin/category')->with('message', 'Category deleted');
-//     } else {
-//         return redirect('admin/category')->with('error', 'Category not found');
-//     }
-// }
-
-
-
-// }
-
-
-
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -140,6 +13,9 @@ class CategoryController extends Controller
 {
     public function index()
     {
+        
+
+
         $category = Category::all();
         return view('admin.category.index', compact('category'));
     }
@@ -172,6 +48,18 @@ class CategoryController extends Controller
         $category->des = $data['des'] ?? null;
         $category->name11 = $data['name11'] ?? null;
         $category->name12 = $data['name12'] ?? null;
+        $category->name13 = $data['name13'] ?? null;
+        $category->name14 = $data['name14'] ?? null;
+        $category->name15 = $data['name15'] ?? null;
+        $category->name16 = $data['name16'] ?? null;
+        $category->name17 = $data['name17'] ?? null;
+        $category->name18 = $data['name18'] ?? null;
+        $category->name19 = $data['name19'] ?? null;
+        $category->name202 = $data['name202'] ?? null;
+        $category->name21 = $data['name21'] ?? null;
+        $category->name22 = $data['name22'] ?? null;
+        $category->name23 = $data['name23'] ?? null;
+        $category->name24 = $data['name24'] ?? null;
         $category->slug = $data['slug'] ?? null;
         $category->slug1 = $data['slug1'] ?? null;
         $category->description = $data['description'];
@@ -226,6 +114,18 @@ class CategoryController extends Controller
         $category->name10 = $data['name10'] ?? null;
         $category->name11 = $data['name11'] ?? null;
         $category->name12 = $data['name12'] ?? null;
+        $category->name13 = $data['name13'] ?? null;
+        $category->name14 = $data['name14'] ?? null;
+        $category->name15 = $data['name15'] ?? null;
+        $category->name16 = $data['name16'] ?? null;
+        $category->name17 = $data['name17'] ?? null;
+        $category->name18 = $data['name18'] ?? null;
+        $category->name19 = $data['name19'] ?? null;
+        $category->name202 = $data['name202'] ?? null;
+        $category->name21 = $data['name21'] ?? null;
+        $category->name22 = $data['name22'] ?? null;
+        $category->name23 = $data['name23'] ?? null;
+        $category->name24 = $data['name24'] ?? null;
         $category->des = $data['des'] ?? null;
         $category->slug = $data['slug'] ?? null;
         $category->slug1 = $data['slug1'] ?? null;
@@ -291,6 +191,31 @@ class CategoryController extends Controller
                 File::delete($destination);
             }
         }
+    }
+
+    public function filter(Request $request)
+    {
+        $name = $request->input('name');
+        $name1 = $request->input('name1');
+
+        
+        $query = Category::query();
+        
+
+        if ($name) {
+            $query->where('name', $name);
+        }
+
+        if ($name1) {
+            $query->where('name1', $name1);
+        }
+
+        $categories = $query->get();
+
+        return view('frontend.index', [
+            
+            'categories' => $categories,
+        ]);
     }
 
 }

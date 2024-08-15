@@ -4,22 +4,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-      @media (min-width: 1440px) {
-    .container {
-        width: 1440px;
-    }
-}
-      .rowwing{
-        padding-inline: 25px;
-        margin-top: 10px;
-      }
-      .md_mb-5{
-        margin-top: 25px;
-      }
-      p{
-        text-align: right;
-        margin-bottom: 15px !important;
-      }
+        @media (min-width: 1440px) {
+            .container {
+                width: 1440px;
+            }
+        }
+
+        .rowwing {
+            padding-inline: 25px;
+            margin-top: 10px;
+        }
+
+        .md_mb-5 {
+            margin-top: 25px;
+        }
+
+        p {
+            text-align: right;
+            margin-bottom: 15px !important;
+        }
+
         .mb-3.d-flexisi {
             display: flex;
             max-width: 300px;
@@ -166,7 +170,7 @@
                     @php
                         $images = json_decode($category->image1, true);
                     @endphp
-                    <div class="col-lg-9 col-md-12">
+                    <div class="col-lg-8 col-md-12">
                         <div class="demo">
                             <ul id="lightSlider">
                                 @foreach ($images as $image)
@@ -176,14 +180,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <div class="mb-3 md_mb-5">
-                            <h2>Կոդ</h2>
-                            <span>{{ $category->description }}</span>
-                        </div>
-                        <div class="mb-3 md_mb-5">
-                            <h2>Նկարագիր</h2>
-                            <span>{{ $category->des }}</span>
-                        </div>
+
                     </div>
                     <div id="myModal" class="modal">
                         <span class="close">&times;</span>
@@ -197,147 +194,48 @@
                         <p>No images available.</p>
                     </div>
                 @endif
-            
-                <div class="col-lg-3 col-sm-4">
+
+                <div class="col-lg-4 col-sm-4">
                     <div class="row rowwing">
-                        @foreach (['name' => 'Շինության տիպ', 'name1' => 'Նորակառույց', 'name2' => 'Վերելակ', 'name3' => 'Հարկերի քանակ', 'name4' => 'Հարկը', 'name5' => 'Կայանատեղի', 'name6' => 'Սենյակների քանակ', 'name7' => 'Սանհանգույցի քանակ', 'name8' => 'Պատշգամբ', 'name9' => 'Առաստաղի բարձրություն', 'name10' => 'Կահույք', 'name11' => 'Ընդհանուր մակերես', 'name12' => 'Վերանորոգված', 'slug' => 'Գին', 'slug1' => 'Տեսարան',  'meta_title' => 'Տարածաշրջան', 'meta_description' => 'Կենցաղային տեխնիկա', 'meta_keywords' => 'Գործակալ'] as $key => $label)
+                        @foreach (['name' => 'Տարածաշրջանը', 'name1' => 'Նորակառույց', 'name2' => 'Վերելակ', 'name3' => 'Հարկերի քանակ', 'name4' => 'Հարկը', 'name5' => 'Կայանատեղի', 'name6' => 'Սենյակների քանակ', 'name7' => 'Սանհանգույցի քանակ', 'name8' => 'Պատշգամբ', 'name9' => 'Առաստաղի բարձրություն','name16'=>'Կենցաղային տեխնիկա', 'name10' => 'Կահույք', 'name11' => 'Ընդհանուր մակերես', 'name12' => 'Վերանորոգված', 'slug' => 'Գին', 'slug1' => 'Տեսարան', 'meta_title' => 'Տարածաշրջան', 'meta_description' => 'Կենցաղային տեխնիկա'] as $key => $label)
                             @if (!empty($category->$key))
                                 <div class="mb-3 d-flexisi">
                                     <h2>{{ $label }}</h2>
-                                    @if ($key == 'slug')
-                                        @php
-                                            $priceInDram = $category->slug;
-                                            $priceInDollar = round($priceInDram * 395, 2);
-                                        @endphp
-                                        <p>{{ $priceInDollar }} AMD  /  {{ $priceInDram }}USD </p>
-                                     
-                                    @else
-                                        <p>{{ $category->$key }}</p>
-                                    @endif
+                                    <p>{{ $category->$key }}</p>
                                 </div>
                             @endif
                         @endforeach
                     </div>
                 </div>
-                
-                
-            </div>
-            
-            {{-- <div class="row">
 
-                @if (!empty($category->image1))
-                    @php
-                        $images = json_decode($category->image1, true);
-                    @endphp
-                    <div class=" col-lg-9 col-md-12">
-                        <div class="demo">
-                            <ul id="lightSlider">
-                                @foreach ($images as $image)
-                                    <li data-thumb="{{ asset($image) }}">
-                                        <img src="{{ asset($image) }}" alt="Category Image" class='contnet_image'>
-                                    </li>
-                                @endforeach
-                            </ul>
+
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="mb-3 md_mb-5">
+                            <h2>Կոդ</h2>
+                            <span>{{ $category->description }}</span>
                         </div>
+
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="mb-3 md_mb-5">
+                            <h2>Գործակալ</h2>
+                            <span>{{ $category->meta_keywords }}</span>
+                        </div>
+
+                    </div>
+                    
+                    <div class="col-lg-12">
                         <div class="mb-3 md_mb-5">
                             <h2>Նկարագիր</h2>
                             <span>{{ $category->des }}</span>
                         </div>
                     </div>
-                    <div id="myModal" class="modal">
-                        <span class="close">&times;</span>
-                        <img class="modal-content" id="img01">
-                        <div id="caption"></div>
-                        <a class="prev">&#10094;</a>
-                        <a class="next">&#10095;</a>
-                    </div>
-                @else
-                    <div class="col-lg-9">
-                        <p>No images available.</p>
-                    </div>
-                @endif
-                <div class="col-lg-3 col-sm-4">
-                    <div class="row rowwing">
-                        <div class="mb-3 d-flexisi">
-                            <h2>Շինության տիպ</h2>
-                            <p>{{ $category->name }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Նորակառույց</h2>
-                            <p>{{ $category->name1 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Վերելակ</h2>
-                            <p>{{ $category->name2 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Հարկերի քանակ</h2>
-                            <p>{{ $category->name3 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Հարկը</h2>
-                            <p>{{ $category->name4 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Կայանատեղի</h2>
-                            <p>{{ $category->name5 }}</p>
-                        </div>
-
-                        <div class="mb-3 d-flexisi">
-                            <h2>Սենյակների քանակ</h2>
-                            <p>{{ $category->name6 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Սանհանգույցի քանակ</h2>
-                            <p>{{ $category->name7 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Պատշգամբ</h2>
-                            <p>{{ $category->name8 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Առաստաղի բարձրություն</h2>
-                            <p>{{ $category->name9 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Կահույք</h2>
-                            <p>{{ $category->name10 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Ընդհանուր մակերես </h2>
-                            <p>{{ $category->name11 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Վերանորոգված</h2>
-                            <p>{{ $category->name12 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Գին</h2>
-                            <p>{{ $category->slug }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Տարադրամ</h2>
-                            <p>{{ $category->slug1 }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Տեսարան</h2>
-                            <p>{{ $category->description }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Տարածաշրջան</h2>
-                            <p>{{ $category->meta_title }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Կենցաղային տեխնիկա</h2>
-                            <p>{{ $category->meta_description }}</p>
-                        </div>
-                        <div class="mb-3 d-flexisi">
-                            <h2>Գործակալ</h2>
-                            <p>{{ $category->meta_keywords }}</p>
-                        </div>
-                    </div>
                 </div>
-            </div> --}}
+            </div>
+
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>

@@ -18,5 +18,6 @@ class ModifyCategoriesTable extends Migration
         Schema::table('categories', function (Blueprint $table) {
             $table->string('image1')->nullable()->change();
         });
+        
     }
 }
