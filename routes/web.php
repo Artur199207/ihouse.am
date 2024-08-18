@@ -1,15 +1,18 @@
 <?php
-use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\EmailController;
-use App\Http\Controllers\Admin\PostController;
-use App\Http\Controllers\SomeController; 
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\CategoryController1;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\EmailController;
+use App\Http\Controllers\ListingController;
+use App\Http\Controllers\SomeController;
+use Illuminate\Support\Facades\Auth;
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-use App\Http\Controllers\ListingController;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -29,6 +32,7 @@ Route::get('/evaluation', function () {
 Route::get('/mail', function () {
     return view('email');
 })->name('email');
+Route::get('/', [FrontendController::class, 'index']);
 Route::get('/filter-categories', [App\Http\Controllers\Admin\CategoryController::class, 'filter'])->name('filter.categories');
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
@@ -45,6 +49,10 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('categ', [CategoryController1::class, 'index'])->name('admin.categ.index');
     Route::get('add-categ', [CategoryController1::class, 'create'])->name('admin.categ.create');
     Route::post('add-categ', [CategoryController1::class, 'store'])->name('admin.categ.create');
+    Route::get('edit-categ/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
+    Route::post('delete-categ/{id}', [CategoryController1::class, 'destroy'])->name('admin.categ.delete');
+    Route::get('delete-categ/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+Route::put('update-categ/{categ_id}', [CategoryController1::class, 'update'])->name('admin.categ.update');
 
 
 

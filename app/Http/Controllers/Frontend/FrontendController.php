@@ -6,23 +6,32 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Post;
-
+use App\Models\Categ;
 
 class FrontendController extends Controller
 {
    public function index(){
+
+      $categs = Categ::all(); // Retrieve all categs
+      $categories = [];
+
+
       If(!count(request()->all()))
       {
-         $categories = Category::get();
+         $categories = Category::all();
       }
       
-   
-
-
       return view('frontend.index', [
-            
+         'categs' => $categs,
          'categories' => $categories,
      ]);
+
+
+   //    return view('frontend.index', [
+            
+   //       'categories' => $categories,
+   //   ]);
+   
    }
 
    public function viewCategoryPost($category_slug){

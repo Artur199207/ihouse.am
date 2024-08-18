@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Listing; // Correct namespace import
+use Illuminate\Http\Request;
 
 class ListingController extends Controller
 {
     public function index()
     {
-        $listings = Listing::all(); 
-
-        return view('listings.index', compact('listings'));
+        // Your logic here
+        return view('listings.index');
     }
 }
-

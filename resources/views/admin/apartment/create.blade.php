@@ -45,7 +45,7 @@
 
                     <div class="mb-3" id="district-container" style="display: none;">
                         <label for="district">Շրջան</label>
-                        <select id="district" name="name" class="form-control">
+                        <select id="district" name="name100" class="form-control">
                             <option value="">Ընտրել շրջանը</option>
                             <!-- District options will be populated dynamically -->
                         </select>
@@ -161,7 +161,7 @@
                         <label for="image002">Նոր նկարներ (մուլտիմեդիա)</label>
                         <input type="file" name="image002[]" class="form-control" id="image1"
                             aria-describedby="emailHelp" multiple>
-                        @error('image1')
+                        @error('image002')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>

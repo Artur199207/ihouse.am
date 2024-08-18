@@ -1,77 +1,168 @@
 <?php
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\CategoryFormRequest1;
 use App\Models\Category;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use App\Models\Categ;
 class CategoryController1 extends Controller
 {
     public function index()
     {
-        
-        return view('admin.apartment.index');
+        $categs = Category::all();
+        return view('admin.apartment.index', compact('categs'));
     }
+
     public function create()
     {
-        
         return view('admin.apartment.create');
     }
+
     public function store(CategoryFormRequest1 $request)
     {
         $data = $request->validated();
-        $request->validate([
-            'name100' => 'required|string',
-            'image001.*' => 'image|mimes:jpeg,png,jpg,gif|max:350000', 
-            'description' => 'nullable|string',
-        
-        ]);
-        $categ = new Category;
-        $categ->name100 = $data['name100'] ?? null;
-        $categ->name101 = $data['name101'] ?? null;
-        $categ->name102 = $data['name102'] ?? null;
-        $categ->name103 = $data['name103'] ?? null;
-        $categ->name104 = $data['name104'] ?? null;
-        $categ->name105 = $data['name105'] ?? null;
-        $categ->name106 = $data['name106'] ?? null;
-        $categ->name107 = $data['name107'] ?? null;
-        $categ->name108 = $data['name108'] ?? null;
-        $categ->name109 = $data['name109'] ?? null;
-        $categ->name110 = $data['name110'] ?? null;
-        $categ->name111 = $data['name111'] ?? null;
-        $categ->name112 = $data['name112'] ?? null;
-        $categ->name113 = $data['name113'] ?? null;
-        $categ->name114 = $data['name114'] ?? null;
-        $categ->name115 = $data['name115'] ?? null;
-        $categ->name116 = $data['name116'] ?? null;
-        $categ->name117 = $data['name117'] ?? null;
-        $categ->name118 = $data['name118'] ?? null;
-        $categ->name119 = $data['name119'] ?? null;
-        $categ->name120 = $data['name120'] ?? null;
-        $categ->name121 = $data['name211'] ?? null;
-        $categ->name122 = $data['name122'] ?? null;
-        $categ->name123 = $data['name123'] ?? null;
-        $categ->name124 = $data['name124'] ?? null;
-        $categ->description = $data['description'] ?? null;
+
+        $categs = new Categ;
+    
+        // foreach ($data as $key => $value) {
+        //     if (strpos($key, 'name') === 0) {
+        //         $categs->$key = $value;
+        //     }
+        // }
+      
+        $categs->name100 = $data['name100'] ?? null;
+        $categs->name101 = $data['name101'] ?? null;
+        $categs->name102 = $data['name102'] ?? null;
+        $categs->name103 = $data['name103'] ?? null;
+        $categs->name104 = $data['name104'] ?? null;
+        $categs->name105 = $data['name105'] ?? null;
+        $categs->name106 = $data['name106'] ?? null;
+        $categs->name107 = $data['name107'] ?? null;
+        $categs->name108 = $data['name108'] ?? null;
+        $categs->name109 = $data['name109'] ?? null;
+        $categs->name110 = $data['name110'] ?? null;
+        $categs->name111 = $data['name111'] ?? null;
+        $categs->name112 = $data['name112'] ?? null;
+        $categs->name113 = $data['name113'] ?? null;
+        $categs->name114 = $data['name114'] ?? null;
+        $categs->name115 = $data['name115'] ?? null;
+        $categs->name116 = $data['name116'] ?? null;
+        $categs->name117 = $data['name117'] ?? null;
+        $categs->name118 = $data['name118'] ?? null;
+        $categs->name219 = $data['name219'] ?? null;
+        $categs->name120 = $data['name120'] ?? null;
+        $categs->name121 = $data['name121'] ?? null;
+        $categs->name122 = $data['name122'] ?? null;
+        $categs->name123 = $data['name123'] ?? null;
+        $categs->name124 = $data['name124'] ?? null;
+        $categs->description = $data['description'] ?? null;
 
         if ($request->hasFile('image001')) {
             $file = $request->file('image001');
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('uploads/category/'), $filename);
-            $categ->image = $filename;
+            $file->move(public_path('uploads/categs/'), $filename);
+            $categs->image001 = $filename;
         }
+
         if ($request->hasFile('image002')) {
             $imagePaths = [];
             foreach ($request->file('image002') as $file) {
                 $filename = time() . '_' . $file->getClientOriginalName();
-                $file->move(public_path('uploads/category/'), $filename);
-                $imagePaths[] = 'uploads/category/' . $filename; 
+                $file->move(public_path('uploads/categs/'), $filename);
+                $imagePaths[] = 'uploads/categs/' . $filename;
             }
-            $categ->image002 = json_encode($imagePaths); 
+            $categs->image002 = json_encode($imagePaths);
         }
-        $categ->save();
 
-        return redirect('admin/category')->with('message', 'Category added successfully');
+        $categs->save();
+
+        return redirect('admin/categ')->with('message', 'Categs added successfully');
+    }
+
+    public function edit($id)
+    {
+        $categs = Category::findOrFail($id);
+        return view('admin.categs.edit', compact('categs'));
+    }
+
+    public function update(CategoryFormRequest1 $request, $categs_id)
+    {
+        $data = $request->validated();
+
+        $categs = Category::find($categs_id);
+
+        if (!$categs) {
+            return redirect('admin/categs')->with('message', 'Categs not found');
+        }
+
+        foreach ($data as $key => $value) {
+            if (strpos($key, 'name') === 0) {
+                $categs->$key = $value;
+            }
+        }
+
+        $categs->description = $data['description'] ?? null;
+
+        if ($request->hasFile('image001')) {
+            $file = $request->file('image001');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/categs/'), $filename);
+            $categs->image001 = $filename;
+        }
+
+        if ($request->hasFile('image002')) {
+            $imagePaths = [];
+            foreach ($request->file('image002') as $file) {
+                $filename = time() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('uploads/categs/'), $filename);
+                $imagePaths[] = 'uploads/categs/' . $filename;
+            }
+            $categs->image002 = json_encode($imagePaths);
+        }
+
+        $categs->updated_by = Auth::user()->id;
+        $categs->save();
+
+        return redirect('admin/categs')->with('message', 'Categs updated successfully');
+    }
+
+    public function destroy($categs_id)
+    {
+        $categs = Category::find($categs_id);
+
+        if ($categs) {
+            // Delete associated files
+            if ($categs->image001 && File::exists(public_path('uploads/categs/' . $categs->image001))) {
+                File::delete(public_path('uploads/categs/' . $categs->image001));
+            }
+
+            if ($categs->image002) {
+                $images = json_decode($categs->image002);
+                foreach ($images as $image) {
+                    if (File::exists(public_path($image))) {
+                        File::delete(public_path($image));
+                    }
+                }
+            }
+
+            $categs->delete();
+            return redirect('admin/categs')->with('message', 'Categs deleted successfully');
+        } else {
+            return redirect('admin/categs')->with('message', 'Categs not found');
+        }
+    }
+
+    protected function deleteImage($imagePath)
+    {
+        if (!empty($imagePath)) {
+            $destination = public_path('uploads/categs/') . $imagePath;
+            if (File::exists($destination)) {
+                File::delete($destination);
+            }
+        }
     }
 }

@@ -107,23 +107,6 @@
     </div>
     </div>
 
-    {{-- <label for="meta_title">Meta Title:</label>
-    <select name="meta_title" id="meta_title">
-        <option value="">Select Meta Title</option>
-        @foreach ($metaTitles as $title)
-            <option value="{{ $title }}">{{ $title }}</option>
-        @endforeach
-    </select>
-
-    <label for="name_14">Name 14:</label>
-    <select name="name_14" id="name_14">
-        <option value="">Select Name 14</option>
-        @foreach ($name14Options as $name)
-            <option value="{{ $name }}">{{ $name }}</option>
-        @endforeach
-    </select>
-
-    <button type="submit">Filter</button> --}}
 
     <div class="banner-search">
         <div class="container">
@@ -179,10 +162,6 @@
                             </div>
                     </form>
                 </div>
-                <!-- <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
-                              <p>Join now and get updated with all the properties deals.</p>
-                              <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Login</button>
-                            </div>  -->
             </div>
         </div>
     </div>
@@ -215,39 +194,39 @@
                 @endforeach
             </div>
         </div>
-
-
-        
-        <div class="properties-listing spacer">
-            <div class="content_flex">
-                <h2>TownHouse</h2>
-                <a href="{{ route('listings.index') }}">View Listings</a>
-            </div>
-            <div id="owl-example" class="owl-carousel">
-                @foreach ($categories as $category)
-                    <div class="item">
-                        <div class="properties">
-                            <div class="image-holder">
-                                <img src="{{ asset('uploads/category/' . $category->image) }}" alt="Category Image"
-                                    style="width:200px;height:130px;">
+    </div>
+    <div class="container">
+        @if (!empty($categs))
+            <div class="properties-listing spacer">
+                <div class="content_flex">
+                    <h2>arancnatun</h2>
+                    <a href="{{ route('listings.index') }}">View Listings</a>
+                </div>
+                <div id="owl-example" class="owl-carousel">
+                    @foreach ($categs as $categ)
+                        <div class="item">
+                            <div class="properties">
+                                <div class="image-holder">
+                                    <img src="{{ asset('uploads/categs/' . $categ->image001) }}" alt="Categ Image"
+                                        style="width:200px;height:130px;">
+                                </div>
+                                <h4>
+                                    <a href="{{ url('tutorial/' . $categ->name100) }}">{{ $categ->name100 }}</a>
+                                </h4>
+                                <p class="price">{{ $categ->name101 }}</p>
+                                <div class="listing-detail">
+                                    <p class="price">{{ $categ->name102 }}</p>
+                                </div>
+                                <a class="btn btn-primary" href="{{ url('tutorial/' . $categ->name103) }}">Տեսնել
+                                    ավելին</a>
                             </div>
-                            <h4>
-                                <a href="{{ url('tutorial/' . $category->slug) }}">{{ $category->slug }} $</a>
-                            </h4>
-                            <p class="price">{{ $category->meta_title }}</p>
-                            <div class="listing-detail">
-                                <p class="price">{{ $category->description }}</p>
-                            </div>
-                            <a class="btn btn-primary" href="{{ url('tutorial/' . $category->slug) }}">Տեսնել ավելին</a>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
-        </div>
-
-
-
-
+        @endif
+    </div>
+    <div class="container">
         <div class="spacer">
             <div class="row">
                 <div class="col-lg-12 col-sm-9 recent-view">
@@ -274,5 +253,7 @@
 
             </div>
         </div>
+    </div>
+
     </div>
 @endsection
