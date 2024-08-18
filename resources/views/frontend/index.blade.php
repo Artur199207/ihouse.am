@@ -1,11 +1,24 @@
 @extends('layouts.app')
 @section('content')
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
     <style>
         .content_flex {
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .slick-track {
+            display: flex;
+            gap: 30px;
+        }
+
+        .slick-slide  {
+            width: unset !important;
         }
     </style>
 
@@ -199,10 +212,10 @@
         @if (!empty($categs))
             <div class="properties-listing spacer">
                 <div class="content_flex">
-                    <h2>arancnatun</h2>
+                    <h2>Առանձնատներ</h2>
                     <a href="{{ route('listings.index') }}">View Listings</a>
                 </div>
-                <div id="owl-example" class="owl-carousel">
+                <div id="slick-example" class="slick-carousel">
                     @foreach ($categs as $categ)
                         <div class="item">
                             <div class="properties">
@@ -226,6 +239,8 @@
             </div>
         @endif
     </div>
+
+
     <div class="container">
         <div class="spacer">
             <div class="row">
@@ -256,4 +271,34 @@
     </div>
 
     </div>
+
+
+    <!-- Slick Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#slick-example').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true,
+                arrows: true,
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
 @endsection

@@ -9,7 +9,6 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\SomeController;
 use Illuminate\Support\Facades\Auth;
-
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -19,6 +18,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 Route::get('tutorial/{category_id}',[App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
 Route::get('/listings', [ListingController::class, 'index'])->name('listings.index');
+Route::get('/newlistings', function () {
+    return view('newlistings.index');
+})->name('newlistings.index');
 Route::get('/agents', function () {
     return view('agents');
 })->name('agents');

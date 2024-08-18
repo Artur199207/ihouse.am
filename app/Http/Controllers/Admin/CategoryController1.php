@@ -13,7 +13,7 @@ class CategoryController1 extends Controller
 {
     public function index()
     {
-        $categs = Category::all();
+        $categs = Categ::all();
         return view('admin.apartment.index', compact('categs'));
     }
 
@@ -85,7 +85,7 @@ class CategoryController1 extends Controller
 
     public function edit($id)
     {
-        $categs = Category::findOrFail($id);
+        $categs = Categ::findOrFail($id);
         return view('admin.categs.edit', compact('categs'));
     }
 
@@ -93,7 +93,7 @@ class CategoryController1 extends Controller
     {
         $data = $request->validated();
 
-        $categs = Category::find($categs_id);
+        $categs = Categ::find($categs_id);
 
         if (!$categs) {
             return redirect('admin/categs')->with('message', 'Categs not found');
@@ -132,7 +132,7 @@ class CategoryController1 extends Controller
 
     public function destroy($categs_id)
     {
-        $categs = Category::find($categs_id);
+        $categs = Categ::find($categs_id);
 
         if ($categs) {
             // Delete associated files
