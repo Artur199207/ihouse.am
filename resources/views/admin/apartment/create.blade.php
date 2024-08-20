@@ -53,19 +53,19 @@
 
 
                     <div class="mb-3">
-                        <label for="name101">Փողոց</label>
+                        <label for="name101">Շինության տիպ</label>
                         <input type="text" name="name101" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name102">Շինության տիպ</label>
+                        <label for="name102">Տեսակ</label>
                         <input type="text" name="name102" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name103">Նորակառույց</label>
+                        <label for="name103">Տան մակերես</label>
                         <input type="text" name="name103" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name104">Վերելակ</label>
+                        <label for="name104">Հողատարածքի մակերես</label>
                         <input type="text" name="name104" class="form-control">
                     </div>
                     <div class="mb-3">
@@ -73,11 +73,11 @@
                         <input type="text" name="name105" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name106">Կայանատեղի </label>
+                        <label for="name106">Սենյակների քանակ </label>
                         <input type="text" name="name106" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name107">Ընդհանուր մակերես </label>
+                        <label for="name107">Սանհանգույցի քանակ </label>
                         <input type="text" name="name107" class="form-control">
                     </div>
                     <div class="mb-3">
@@ -85,19 +85,19 @@
                         <input type="text" name="name108" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name109">Սանհանգույցների քանակ </label>
+                        <label for="name109">Կահույք </label>
                         <input type="text" name="name109" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name110">Առաստաղի բարձրություն </label>
+                        <label for="name110">Ավտոտնակ </label>
                         <input type="text" name="name110" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name111">Հարկ </label>
+                        <label for="name111">Ավտոկայանատեղի </label>
                         <input type="text" name="name111" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name112">Պատշգամբ </label>
+                        <label for="name112">Առաստաղի բարձրություն </label>
                         <input type="text" name="name112" class="form-control">
                     </div>
 
@@ -108,23 +108,23 @@
 
 
                     <div class="mb-3">
-                        <label for="name113">Կահույք</label>
+                        <label for="name113">Վերանորոգում</label>
                         <input type="text" name="name113" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name114">Վերանորոգում</label>
+                        <label for="name114">Հարմարություններ</label>
                         <input type="text" name="name114" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name115">Հարմարություններ</label>
+                        <label for="name115">Կոմունիկացիաներ</label>
                         <input type="text" name="name115" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name116">Կենցաղային տեխնիկա</label>
+                        <label for="name116">Պարսպապատում</label>
                         <input type="text" name="name116" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="name117">Տեսարան պատուհանից
+                        <label for="name117">Տարածաշրջան
                         </label>
                         <input type="text" name="name117" class="form-control">
                     </div>
@@ -146,15 +146,15 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="name119">Գործակալ</label>
-                        <textarea rows="3" name="name119" class="form-control"></textarea>
+                        <label for="name121">Գործակալ</label>
+                        <textarea rows="3" name="name121" class="form-control"></textarea>
                     </div>
                      <div class="mb-3">
-                        <label for="name118">Գործակալի Հեռ․՝</label>
-                        <input type="text" name="name118" class="form-control">
+                        <label for="name122">Գործակալի Հեռ․՝</label>
+                        <input type="text" name="name122" class="form-control">
                     </div>
                     <div class="mb-3">
-                        <label for="description">կոդ</label>
+                        <label for="description">Կենցաղային տեխնիկա</label>
                         <textarea name="description" class="form-control"></textarea>
                     </div>
                     <div class="mb-3">

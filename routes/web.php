@@ -9,6 +9,7 @@ use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\SomeController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Frontend\TutorialController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -18,6 +19,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 Route::get('tutorial/{category_id}',[App\Http\Controllers\Frontend\FrontendController::class, 'viewCategoryPost']);
 Route::get('/listings', [ListingController::class, 'index'])->name('listings.index');
+
 Route::get('/newlistings', function () {
     return view('newlistings.index');
 })->name('newlistings.index');
@@ -51,10 +53,9 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('categ', [CategoryController1::class, 'index'])->name('admin.categ.index');
     Route::get('add-categ', [CategoryController1::class, 'create'])->name('admin.categ.create');
     Route::post('add-categ', [CategoryController1::class, 'store'])->name('admin.categ.create');
-    Route::get('edit-categ/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
-    Route::post('delete-categ/{id}', [CategoryController1::class, 'destroy'])->name('admin.categ.delete');
-    Route::get('delete-categ/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
-Route::put('update-categ/{categ_id}', [CategoryController1::class, 'update'])->name('admin.categ.update');
+    Route::get('admin/edit-categ/{categ_id}', [App\Http\Controllers\Admin\CategoryController1::class, 'edit']);
+    Route::get('delete-categ/{id}', [App\Http\Controllers\Admin\CategoryController1::class, 'destroy']);
+    Route::put('update-categ/{categ_id}', [CategoryController1::class, 'update'])->name('admin.categ.update');
 
 
 

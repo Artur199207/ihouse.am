@@ -53,7 +53,7 @@ class CategoryController1 extends Controller
         $categs->name116 = $data['name116'] ?? null;
         $categs->name117 = $data['name117'] ?? null;
         $categs->name118 = $data['name118'] ?? null;
-        $categs->name219 = $data['name219'] ?? null;
+        $categs->name119 = $data['name119'] ?? null;
         $categs->name120 = $data['name120'] ?? null;
         $categs->name121 = $data['name121'] ?? null;
         $categs->name122 = $data['name122'] ?? null;
@@ -86,7 +86,7 @@ class CategoryController1 extends Controller
     public function edit($id)
     {
         $categs = Categ::findOrFail($id);
-        return view('admin.categs.edit', compact('categs'));
+        return view('admin.categs.edit', compact('categ'));
     }
 
     public function update(CategoryFormRequest1 $request, $categs_id)

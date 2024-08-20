@@ -1,4 +1,10 @@
-
+<style>
+    .header.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
 <div class="navbar-wrapper">
 
     <div class="navbar-inverse" role="navigation">
@@ -13,7 +19,7 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-           
+            
             <div class="navbar-collapse  collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="{{ url('/') }}">գլխավոր</a></li>
@@ -29,15 +35,15 @@
 
 
 <div class="container">
-    <div class="header">
+    <div class="header heading">
         <a href="{{ url('/') }}">
-            <img src="{{asset('assets/image/new_logo.png')}}" alt="ihouse.am" style="width:100px;height:100px;">
+            <img src="{{asset('assets/image/logoihouse.svg')}}" alt="ihouse.am" style="width:300px;">
         </a>
-        <ul class="pull-right">
+        {{-- <ul class="pull-right">
             <li><a href="{{ route('newlistings.index') }}">Arancnatun</a></li>
             <li><a href="buysalerent.php">Sale</a></li>
             <li><a href="buysalerent.php">Rent</a></li>
-        </ul>
+        </ul> --}}
     </div>
 
 </div>

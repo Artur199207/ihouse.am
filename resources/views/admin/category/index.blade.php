@@ -22,7 +22,7 @@
                 <th>ID</th>
                 <th>Անուն</th>
                 <th>նկար</th>
-                <th>Գին</th>
+                <th>գործակալ</th>
                 <th>Կոդ</th>
                 <th>փոփոխել</th>
                 <th>ջնջել</th>
@@ -36,7 +36,7 @@
                     <td>
                         <img src="{{ asset('uploads/category/' . $item->image) }}" width="50px" height="50px" alt="ihouse">
                     </td>
-                    <td>{{ $item->slug}}</td>
+                    <td>{{ $item->meta_keywords}}</td>
                     <td>{{$item->description}}</td>
                     <td>
                         <a href="{{ url('admin/edit-category/' . $item->id) }}" class="btn btn-success">Edit</a>
