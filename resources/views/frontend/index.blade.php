@@ -20,6 +20,7 @@
         .slick-slide {
             width: unset !important;
         }
+        
     </style>
 
 
@@ -183,8 +184,8 @@
     <div class="container">
         <div class="properties-listing spacer">
             <div class="content_flex">
-                <h2>Bnakaranner</h2>
-                <a href="{{ route('listings.index') }}">View Listings</a>
+                <h2>Բնակարաններ</h2>
+                <a href="{{ route('listings.index') }}">Տեսնել բոլոր բաժինները</a>
             </div>
             <div id="owl-example" class="owl-carousel">
                 @foreach ($categories as $category)
@@ -213,7 +214,7 @@
             <div class="properties-listing spacer">
                 <div class="content_flex">
                     <h2>Առանձնատներ</h2>
-                    <a href="{{ route('listings.index') }}">View Listings</a>
+                    <a href="{{ route('listings.index') }}">Տեսնել բոլոր բաժինները</a>
                 </div>
                 <div id="slick-example" class="slick-carousel">
                     @foreach ($categs as $categ)

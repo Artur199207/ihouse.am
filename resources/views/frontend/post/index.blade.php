@@ -1,187 +1,154 @@
 @extends('layouts.app')
 
 @section('content')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
     <style>
-        @media (min-width: 1440px) {
-            .container {
-                width: 1440px;
-            }
+        .swiper-slide img {
+            height: 550px !important;
+            object-fit: contain;
         }
 
-        .rowwing {
-            padding-inline: 25px;
-            margin-top: 10px;
-        }
-
-        .md_mb-5 {
-            margin-top: 25px;
-        }
-
-        p {
-            text-align: right;
-            margin-bottom: 15px !important;
-        }
-
-        .mb-3.d-flexisi {
-            display: flex;
-            max-width: 300px;
-            width: 100%;
-            justify-content: space-between;
-        }
-
-        h2 {
-            font-family: 'Mardoto-Regular';
-            font-size: 18px
-        }
-
-        .hot-properties.hidden-xs {
-            height: 550px;
-            overflow-y: scroll;
-            overflow-x: hidden;
-        }
-
-        .lSAction>a {
-            z-index: 1 !important;
-        }
-
-        .demo {
-            width: 850px;
-            margin: 0 auto;
-        }
-
-        .header>a {
-            display: inline-block;
-        }
-
-        .contnet_image {
-            display: block;
-            height: auto;
-            width: 100%;
-        }
-
-        @media screen and (max-width:1210px) {
-            .hidden-xs {
-                display: none !important;
-            }
-        }
-
-        @media screen and (max-width:1000px) {
-            .demo {
-                width: 100%;
-            }
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
+        /* Container style */
+        .swiper-container {
             width: 100%;
             height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.9);
+            position: relative;
+            overflow: hidden;
+            /* Hide overflow */
+        }
+
+        /* Slide style */
+        .swiper-slide {
+            overflow: hidden;
+            /* Hide overflow in slides */
+        }
+
+        /* Image style */
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+            /* Remove extra space below images */
+        }
+
+        /* Navigation buttons */
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: #fff;
+            /* White color for buttons */
+            z-index: 10;
+            /* Ensure buttons are on top */
+        }
+
+        /* Pagination bullets */
+        .swiper-pagination {
+            bottom: 10px;
+            /* Adjust position as needed */
+        }
+
+        /* Close icon style */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            /* Hide modal by default */
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-content {
-            margin: auto;
-            display: block;
-            width: 60%;
-        }
-
-        .modal-content,
-        #caption {
-            animation-name: zoom;
-            animation-duration: 0.6s;
-        }
-
-        @keyframes zoom {
-            from {
-                transform: scale(0)
-            }
-
-            to {
-                transform: scale(1)
-            }
+            max-width: 90%;
+            max-height: 80%;
         }
 
         .close {
             position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: #fff;
             cursor: pointer;
         }
 
         .prev,
         .next {
-            cursor: pointer;
             position: absolute;
             top: 50%;
             width: auto;
             padding: 16px;
             margin-top: -22px;
-            color: white;
+            color: #fff;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 18px;
             transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
+            cursor: pointer;
+            border-radius: 3px;
         }
 
         .next {
             right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .prev {
-            left: 0;
-            border-radius: 3px 0 0 3px;
         }
 
         .prev:hover,
         .next:hover {
             background-color: rgba(0, 0, 0, 0.8);
         }
+        .property-single-page{
+            margin-top: 60px;
+        }
     </style>
     <div class="inside-banner">
         <div class="container">
-            <span class="pull-right"><a href="{{ url('/') }}">Home</a> / Buy</span>
-            <h2>Buy</h2>
+            <span class="pull-right"><a href="{{ url('/') }}">Home</a> / Բնակարաններ</span>
+            <h2>Բնակարաններ</h2>
         </div>
     </div>
-    <div class="container">
-        <div class="properties-listing spacer">
-            <div class="row">
-                @if (!empty($category->image1))
-                    @php
-                        $images = json_decode($category->image1, true);
-                    @endphp
-                    <div class="col-lg-8 col-md-12">
-                        <div class="demo">
-                            <ul id="lightSlider">
-                                @foreach ($images as $image)
-                                    <li data-thumb="{{ asset($image) }}">
-                                        <img src="{{ asset($image) }}" alt="Category Image" class="contnet_image">
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
 
-                    </div>
+    <div class="property-single-page">
+
+        <main class="main">
+            <section id="real-estate-2" class="real-estate-2 section">
+
+                <div class="container" data-aos="fade-up">
+
+                    @if (!empty($category->image1))
+                        @php
+                            $images = json_decode($category->image1, true);
+                        @endphp
+                        <div class="col-lg-12 col-md-12">
+                            <div class="swiper-container portfolio-details-slider init-swiper">
+                                <div class="swiper-wrapper">
+                                    @foreach ($images as $image)
+                                        <div class="swiper-slide">
+                                            <img src="{{ asset($image) }}" alt="Category Image" class="contnet_image">
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    @else
+                        <div class="col-lg-9">
+                            <p>No images available.</p>
+                        </div>
+                    @endif
+
+                    <!-- Modal for images -->
                     <div id="myModal" class="modal">
                         <span class="close">&times;</span>
                         <img class="modal-content" id="img01">
@@ -189,124 +156,211 @@
                         <a class="prev">&#10094;</a>
                         <a class="next">&#10095;</a>
                     </div>
-                @else
-                    <div class="col-lg-9">
-                        <p>No images available.</p>
-                    </div>
-                @endif
 
-                <div class="col-lg-4 col-sm-4">
-                    <div class="row rowwing">
-                        @foreach (['name' => 'Տարածաշրջանը', 'name1' => 'Նորակառույց', 'name2' => 'Վերելակ', 'name3' => 'Հարկերի քանակ', 'name4' => 'Հարկը', 'name5' => 'Կայանատեղի', 'name6' => 'Սենյակների քանակ', 'name7' => 'Սանհանգույցի քանակ', 'name8' => 'Պատշգամբ', 'name9' => 'Առաստաղի բարձրություն','name16'=>'Կենցաղային տեխնիկա', 'name10' => 'Կահույք', 'name11' => 'Ընդհանուր մակերես', 'name12' => 'Վերանորոգված', 'slug' => 'Գին', 'slug1' => 'Տեսարան', 'meta_title' => 'Տարածաշրջան', 'meta_description' => 'Կենցաղային տեխնիկա'] as $key => $label)
-                            @if (!empty($category->$key))
-                                <div class="mb-3 d-flexisi">
-                                    <h2>{{ $label }}</h2>
-                                    <p>{{ $category->$key }}</p>
+
+                    <div class="row justify-content-between gy-4 mt-4">
+
+                        <div class="col-lg-8" data-aos="fade-up">
+
+                            <div class="portfolio-description">
+                                <h2>Նկարագիր</h2>
+                                <p>
+                                    {{ $category->des }}
+                                </p>
+                            </div>
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-pills mb-3">
+                                <li><a class="nav-link active" data-bs-toggle="pill" href="#real-estate-2-tab1">Նկարագիր</a>
+                                </li>
+                                <li><a class="nav-link" data-bs-toggle="pill" href="#real-estate-2-tab2">Floor Plans</a>
+                                </li>
+                                <li><a class="nav-link" data-bs-toggle="pill" href="#real-estate-2-tab3">Location</a></li>
+                            </ul><!-- End Tabs -->
+
+                            <!-- Tab Content -->
+                            <div class="tab-content">
+
+                                <div class="tab-pane fade show active" id="real-estate-2-tab1">
+                                    <h2>Նկարագիր</h2>
+                                    
                                 </div>
-                            @endif
-                        @endforeach
+
+                                <div class="tab-pane fade" id="real-estate-2-tab2">
+                                    <img src="assets/img/floor-plan.jpg" alt="" class="img-fluid">
+                                </div><!-- End Tab 2 Content -->
+
+                                <div class="tab-pane fade" id="real-estate-2-tab3">
+                                    <iframe style="border:0; width: 100%; height: 400px;"
+                                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+                                        frameborder="0" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div><!-- End Tab 3 Content -->
+
+                            </div><!-- End Tab Content -->
+
+                        </div>
+
+                        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                            <div class="portfolio-info">
+                                <h3>Բնակարաններ</h3>
+                                <ul>
+                                    <li><strong>Կոդ:</strong>{{ $category->description }} </li>
+                                    <li><strong>Գին:</strong>{{ $category->slug }} </li>
+                                    <li><strong>Գործակալ:</strong> {{ $category->meta_keywords }}</li>
+                                    <li><strong>Գործակալի Հեռ․՝:</strong> {{ $category->meta_title }}</li>
+                                    <li><strong>Զանգահարել:</strong> <a href="tel:{{ $category->meta_title }}" class="btn-tel">
+                                        <button>Զանգահարել</button>
+                                    </a></li>
+                                </ul>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3>Շենքի մասին</h3>
+                                <ul>
+                                    <li><strong>Հասցէ՝:</strong>{{ $category->name }} </li>
+                                    <li><strong>Շինության տիպ:</strong>{{ $category->name2 }} </li>
+                                    <li><strong>Նորակառույց:</strong> {{ $category->name3 }}</li>
+                                    <li><strong>Վերելակ:</strong> {{ $category->name4 }}</li>
+                                    <li><strong>Կայանատեղի:</strong> {{ $category->name6 }}</li>
+                                    <li><strong>Հարկերի քանակ:</strong> {{ $category->name5 }}</li>
+                                </ul>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3>Բնակարանի մասին</h3>
+                                <ul>
+                                    <li><strong>Ընդհանուր մակերես:</strong>{{ $category->name7 }} </li>
+                                    <li><strong>Սենյակների քանակ:</strong>{{ $category->name8 }} </li>
+                                    <li><strong>Սանհանգույցների քանակ:</strong> {{ $category->name9 }}</li>
+                                    <li><strong>Առաստաղի բարձրություն:</strong> {{ $category->name10 }}</li>
+                                    <li><strong>Հարկ:</strong> {{ $category->name11 }}</li>
+                                    <li><strong>Պատշգամբ:</strong> {{ $category->name12 }}</li>
+                                    <li><strong>Կահույք:</strong> {{ $category->name13 }}</li>
+                                    <li><strong>Վերանորոգում:</strong> {{ $category->name14 }}</li>
+                                    <li><strong>Հարմարություններ:</strong> {{ $category->name15 }}</li>
+                                    <li><strong>Տեսարան պատուհանից:</strong> {{ $category->name17 }}</li>
+                                    <li><strong>Կենցաղային տեխնիկա:</strong> {{ $category->name16 }}</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
 
+            </section><!-- /Real Estate 2 Section -->
 
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="mb-3 md_mb-5">
-                            <h2>Կոդ</h2>
-                            <span>{{ $category->description }}</span>
-                        </div>
+        </main>
 
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="mb-3 md_mb-5">
-                            <h2>Գործակալ</h2>
-                            <span>{{ $category->meta_keywords }}</span>
-                        </div>
 
-                    </div>
-                    
-                    <div class="col-lg-12">
-                        <div class="mb-3 md_mb-5">
-                            <h2>Նկարագիր</h2>
-                            <span>{{ $category->des }}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Scroll Top -->
+        <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+                class="bi bi-arrow-up-short"></i></a>
 
-        </div>
+        <!-- Preloader -->
+        <div id="preloader"></div>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script>
-            $('#lightSlider').lightSlider({
-                gallery: true,
-                item: 1,
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var swiper = new Swiper('.init-swiper', {
                 loop: true,
-                slideMargin: 0,
-                thumbItem: 9,
-                auto: true,
-                pause: 4000,
-                pauseOnHover: true
+                speed: 600,
+                autoplay: {
+                    delay: 5000
+                },
+                slidesPerView: 'auto',
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable: true
+                }
             });
 
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("img01");
-            var captionText = document.getElementById("caption");
+            // Handle modal image display
+            var modal = document.getElementById('myModal');
+            var close = document.querySelector('.modal .close');
 
-            document.querySelectorAll('.contnet_image').forEach(img => {
+            close.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Example of how to open the modal and display an image
+            document.querySelectorAll('.swiper-slide img').forEach(img => {
                 img.onclick = function() {
-                    modal.style.display = "block";
+                    var modalImg = document.getElementById('img01');
+                    var captionText = document.getElementById('caption');
+                    modal.style.display = "flex";
                     modalImg.src = this.src;
                     captionText.innerHTML = this.alt;
                 }
             });
+        });
 
-            var span = document.getElementsByClassName("close")[0];
-            span.onclick = function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            var modal = document.getElementById('myModal');
+            var modalImg = document.getElementById('img01');
+            var captionText = document.getElementById('caption');
+            var close = document.querySelector('.modal .close');
+            var prev = document.querySelector('.prev');
+            var next = document.querySelector('.next');
+
+            var currentIndex = 0;
+            var images = Array.from(document.querySelectorAll('.swiper-slide img'));
+
+            function openModal(index) {
+                modal.style.display = "flex";
+                modalImg.src = images[index].src;
+                captionText.innerHTML = images[index].alt;
+                currentIndex = index;
+            }
+
+            function showNextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                openModal(currentIndex);
+            }
+
+            function showPrevImage() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                openModal(currentIndex);
+            }
+
+            images.forEach((img, index) => {
+                img.onclick = function() {
+                    openModal(index);
+                }
+            });
+
+            close.onclick = function() {
                 modal.style.display = "none";
             }
 
-            var currentSlideIndex = 0;
-            var slides = document.querySelectorAll('.contnet_image');
+            prev.onclick = showPrevImage;
+            next.onclick = showNextImage;
 
-            function showSlide(index) {
-                if (index >= slides.length) {
-                    currentSlideIndex = 0
+            // Keyboard navigation
+            document.addEventListener('keydown', function(event) {
+                if (modal.style.display === "flex") {
+                    if (event.key === 'ArrowRight') {
+                        showNextImage();
+                    } else if (event.key === 'ArrowLeft') {
+                        showPrevImage();
+                    }
                 }
-                if (index < 0) {
-                    currentSlideIndex = slides.length - 1
-                }
-                modalImg.src = slides[currentSlideIndex].src;
-            }
+            });
+        });
+    </script>
+    </script>
 
-            document.querySelector('.prev').onclick = function() {
-                currentSlideIndex--;
-                showSlide(currentSlideIndex);
-            }
 
-            document.querySelector('.next').onclick = function() {
-                currentSlideIndex++;
-                showSlide(currentSlideIndex);
-            }
-
-            document.onkeydown = function(e) {
-                switch (e.keyCode) {
-                    case 37:
-                        currentSlideIndex--;
-                        showSlide(currentSlideIndex);
-                        break;
-                    case 39:
-                        currentSlideIndex++;
-                        showSlide(currentSlideIndex);
-                        break;
-                    case 27:
-                        modal.style.display = "none";
-                        break;
-                }
-            }
-        </script>
-
-    @endsection
+@endsection
