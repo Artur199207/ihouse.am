@@ -12,7 +12,13 @@
    
 
 
-    
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/plugins/glightbox.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/plugins/aos.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/rtl.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css') }}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,6 +30,12 @@
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/js/vendor/popper.js') }}"></script>
+    <script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/glightbox.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/aos.js') }}"></script>
+    <script src="{{ asset('assets/js/script.js') }}"></script>
     <style>
       
     </style>
@@ -44,8 +56,8 @@
     </div>
     <script src="{{ asset('assets/js/jquery.slim.min.js') }}"></script>
 
-    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/js/scripts.js') }}"></script>
+    {{-- <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/scripts.js') }}"></script> --}}
     <script src="//cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
 <script>

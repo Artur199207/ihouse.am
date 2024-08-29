@@ -11,36 +11,55 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-
+    {{-- 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('assets/image/new_logo.png') }}" type="image/x-icon">
 
+
+    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/glightbox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/rtl.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/plugins/swiper-bundle.min.css') }}">
+
+
+
     <!-- Styles -->
 
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}"> --}}
 
 
-    <link rel="stylesheet" href="{{ asset('assets/css/sisstyle.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/sisstyle.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/stylecustom.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}" />
-    <!-- <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet"> --> --}}
 
 
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    {{-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="{{ asset('assets/js/owl.carousel.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
     <script src="{{ asset('assets/js/scriptsi.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/modernizr.custom.79639.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.ba-cond.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.slitslider.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.slitslider.js') }}"></script> --}}
+
+    <script src="{{ asset('assets/js/vendor/popper.js') }}" defer='defer'></script>
+    <script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}" defer='defer'></script>
+    <script src="{{ asset('assets/js/plugins/swiper-bundle.min.js') }}" defer='defer'></script>
+    <script src="{{ asset('assets/js/plugins/glightbox.min.js') }}" defer='defer'></script>
+    <script src="{{ asset('assets/js/plugins/aos.js') }}" defer='defer'></script>
+    <script src="{{ asset('assets/js/script.js') }}" defer='defer'></script>
+
 
 
 </head>
@@ -110,7 +129,7 @@
         </main>
         @include('layouts.inc.frontend-footer')
     </div>
-    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
+    {{-- <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script> --}}
     <script>
         function openMenu() {
             var button = document.querySelector('.navbar-toggle');
