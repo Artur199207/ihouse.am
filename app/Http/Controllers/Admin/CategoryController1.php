@@ -83,28 +83,43 @@ class CategoryController1 extends Controller
         return redirect('admin/categ')->with('message', 'Categs added successfully');
     }
 
-    public function edit($id)
+    public function edit($category_id)
     {
-        $categs = Categ::findOrFail($id);
-        return view('admin.categs.edit', compact('categ'));
+        $categ = Categ::findOrFail($category_id); // Rename variable from $categs to $categ
+        return view('admin.apartment.edit', compact('categ'));
     }
+    
 
-    public function update(CategoryFormRequest1 $request, $categs_id)
+    public function update(CategoryFormRequest1 $request, $category_id)
     {
         $data = $request->validated();
 
-        $categs = Categ::find($categs_id);
-
-        if (!$categs) {
-            return redirect('admin/categs')->with('message', 'Categs not found');
-        }
-
-        foreach ($data as $key => $value) {
-            if (strpos($key, 'name') === 0) {
-                $categs->$key = $value;
-            }
-        }
-
+        $categs = Categ::find($category_id);
+        $categs->name100 = $data['name100'] ?? null;
+        $categs->name101 = $data['name101'] ?? null;
+        $categs->name102 = $data['name102'] ?? null;
+        $categs->name103 = $data['name103'] ?? null;
+        $categs->name104 = $data['name104'] ?? null;
+        $categs->name105 = $data['name105'] ?? null;
+        $categs->name106 = $data['name106'] ?? null;
+        $categs->name107 = $data['name107'] ?? null;
+        $categs->name108 = $data['name108'] ?? null;
+        $categs->name109 = $data['name109'] ?? null;
+        $categs->name110 = $data['name110'] ?? null;
+        $categs->name111 = $data['name111'] ?? null;
+        $categs->name112 = $data['name112'] ?? null;
+        $categs->name113 = $data['name113'] ?? null;
+        $categs->name114 = $data['name114'] ?? null;
+        $categs->name115 = $data['name115'] ?? null;
+        $categs->name116 = $data['name116'] ?? null;
+        $categs->name117 = $data['name117'] ?? null;
+        $categs->name118 = $data['name118'] ?? null;
+        $categs->name119 = $data['name119'] ?? null;
+        $categs->name120 = $data['name120'] ?? null;
+        $categs->name121 = $data['name121'] ?? null;
+        $categs->name122 = $data['name122'] ?? null;
+        $categs->name123 = $data['name123'] ?? null;
+        $categs->name124 = $data['name124'] ?? null;
         $categs->description = $data['description'] ?? null;
 
         if ($request->hasFile('image001')) {
@@ -123,16 +138,15 @@ class CategoryController1 extends Controller
             }
             $categs->image002 = json_encode($imagePaths);
         }
+      
+        $categs->update();
 
-        $categs->updated_by = Auth::user()->id;
-        $categs->save();
-
-        return redirect('admin/categs')->with('message', 'Categs updated successfully');
+        return redirect('admin/categ')->with('message', 'Կատեգորիան հաջողությամբ ավելացվեց');
     }
 
-    public function destroy($categs_id)
+    public function destroy($category_id)
     {
-        $categs = Categ::find($categs_id);
+        $categs = Categ::find($category_id);
 
         if ($categs) {
             // Delete associated files

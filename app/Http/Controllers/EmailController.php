@@ -25,7 +25,7 @@ class EmailController extends Controller
           'subject' => $request->subject,
           'name' => $request->name,
           'email' => $request->email,
-          'content' => $request->content,
+         
           
         ];
 

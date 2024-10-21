@@ -74,8 +74,8 @@
                                     <path  d="M16.59,8.59,12,13.17,7.41,8.59,6,10l6,6,6-6Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
                                 </svg>
                                 <ul class="sub__menu">
-                                    <li class="sub__menu--items"><a href="./about.html" class="sub__menu--link">Մեր Մասին</a></li>
-                                    <li class="sub__menu--items"><a href="./contact.html" class="sub__menu--link">Հետադարց կապ</a></li>
+                                    <li class="sub__menu--items"><a href="{{route('aboute')}}" class="sub__menu--link">Մեր Մասին</a></li>
+                                    <li class="sub__menu--items"><a href="{{route('email')}}" class="sub__menu--link">Հետադարց կապ</a></li>
                                     
                                 </ul>
                             </li>
@@ -112,7 +112,7 @@
                 <li class="offcanvas__menu_li">
                     <a class="offcanvas__menu_item" href="#">Բաժիններ</a>
                     <ul class="offcanvas__sub_menu">
-                        <li class="offcanvas__sub_menu_li"><a href="./about.html" class="offcanvas__sub_menu_item">Մեր Մասին</a></li>
+                        <li class="offcanvas__sub_menu_li"><a href="{{route('aboute')}}" class="offcanvas__sub_menu_item">Մեր Մասին</a></li>
                         <li class="offcanvas__sub_menu_li"><a href="./contact.html" class="offcanvas__sub_menu_item">Հետադարց կապ</a></li>
 
                     </ul>

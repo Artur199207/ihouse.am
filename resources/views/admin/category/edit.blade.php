@@ -24,14 +24,13 @@
                     @csrf
                     @method('PUT')
 
-                    {{-- <div class="mb-3">
-                    <label for="name">Շինության տիպ</label>
+
+                
+                <div class="mb-3">
+                    <label for="name">Շրջան</label>
                     <input type="text" name="name" class="form-control"
                         value="{{ old('name', $category->name ?? '') }}">
-                </div> --}}
-
-
-
+                </div>
                     <div class="mb-3">
                         <label for="name1">Փողոց</label>
                         <input type="text" name="name1" class="form-control"
